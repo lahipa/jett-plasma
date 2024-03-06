@@ -1,0 +1,8 @@
+{
+    "default": "relative",
+    "primary": "relative",
+    "secondary": "relative",
+    "warning": "relative",
+    "danger": "relative",
+    "success": "relative"
+}

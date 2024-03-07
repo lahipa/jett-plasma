@@ -11,6 +11,17 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx,json}",
   ],
   theme: {
+    screens: {
+      xs: "375px",
+      sm: "480px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1360px",
+      "3xl": "1440px",
+      "4xl": "1680px",
+      "5xl": "1920px",
+    },
     extend: {
       colors: {
         "background": "#F8F5EF",

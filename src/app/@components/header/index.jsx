@@ -1,14 +1,12 @@
 import React from "react";
-import Link from "next/link";
+import { CtaHeaderContact, LangSelector } from "@/app/@clients";
 import Container from "../container";
-import { Button } from "../base";
-import LangSelector from "./langSelector";
-import Navigation from "./navigation";
 import Logo from "../logo";
+import Navigation from "./navigation";
 
 const Header = () => {
   return (
-    <header className="relative">
+    <header className="fixed w-full top-0 left-0 right-0 bg-background z-40">
       <Container className="flex items-strech h-[120px]">
         <div className="w-[200px] flex items-center justify-start">
           
@@ -21,9 +19,9 @@ const Header = () => {
 
         </div>
         <div className="w-[200px] flex items-center justify-end">
-          <div className="flex items-center gap-[20px]">
+          <div className="flex items-center gap-[20px] relative z-[42]">
             <LangSelector />
-            <Button title="Contact Us" outline />
+            <CtaHeaderContact params={{ route: "/goto" }} />
           </div>
         </div>
       </Container>

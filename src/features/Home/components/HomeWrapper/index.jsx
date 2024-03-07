@@ -1,10 +1,18 @@
 import React from "react";
+import Container from "@/components/container";
+import Hero from "../Hero";
 
 const HomeWrapper = () => {
   return (
-    <div>
-      <p>Home</p>
-    </div>
+    <>
+      <Hero />
+      
+      <section>
+        <Container>
+            <p>Section</p>
+        </Container>
+      </section>
+    </>
   );
 };
 

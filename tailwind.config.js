@@ -5,19 +5,18 @@ import typography from "@tailwindcss/typography";
 
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx,json}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx,json}",
+    './src/features/**/*.{js,ts,jsx,tsx,mdx,json}',
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx,json}",
   ],
   theme: {
     extend: {
       colors: {
-        "background": "#F6F6F9",
-        primary: "#004BF7",
-        "focus-primary": "#CDDBF5",
+        "background": "#F8F5EF",
+        primary: "#41C0F0",
         "surface-primary": "#F5F8FF",
         "border-primary": "#AAC3FC",
-        "hover-primary": "#003FCE",
         warning: "#FAB000",
         "surface-warning": "#FEFAEF",
         "border-warning": "#FDE5AA",

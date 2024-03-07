@@ -1,14 +1,14 @@
 import React from "react";
 import Container from "@/components/container";
 
-const Hero = () => {
+const Footer = () => {
   return (
-    <section>
+    <footer className="relative">
       <Container>
-          <p>Hero</p>
+        <span>Footer</span>
       </Container>
-    </section>
+    </footer>
   );
 };
 
-export default Hero;
+export default Footer;

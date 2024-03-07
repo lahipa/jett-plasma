@@ -1,9 +1,18 @@
-import { HomeWrapper } from "@/features/Home";
+import Container from "@/app/@components/container";
 
 export default function Home() {
   return (
     <>
-      <HomeWrapper />
+      <section>
+        <Container>
+          <p>Hero</p>
+        </Container>
+      </section>
+      <section>
+        <Container>
+          <p>Home Content</p>
+        </Container>
+      </section>
     </>
   );
 }

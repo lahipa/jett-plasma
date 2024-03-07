@@ -1,6 +1,8 @@
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Header from "./@components/header";
 import Footer from "./@components/footer";
+import Container from "./@components/container";
+import { CtaLayoutContact } from "./@clients";
 
 // styling
 import "./globals.css";
@@ -14,12 +16,22 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body className={jakartaSans.className}>
         <Header />
 
-        <main className="relative min-h-screen">
+        <main className="relative min-h-screen pt-[120px]">
           {children}
+
+          <section className="relative py-[80px] bg-black rounded-[80px]">
+            <Container className="flex items-center justify-between gap-[30px]">
+              <h4 className="text-[50px] font-medium text-white leading-[64px] max-w-[846px]">
+                Optimize Your Performance with Jett Plasma - The Latest Solution for Innovative Medical Procedures
+              </h4>
+
+              <CtaLayoutContact params={{ route: "/goto" }} />
+            </Container>
+          </section>
         </main>
 
         <Footer />

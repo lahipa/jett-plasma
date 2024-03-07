@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import cx from "classnames";
 import { dataVariants, dataSizes } from "../../data";
@@ -21,7 +23,7 @@ const Button = (props) => {
       disabled={disabled}
       {...rest}
       className={cx(
-        "relative rounded-full px-[16px] focus:outline-none",
+        "relative font-semibold rounded-full focus:outline-none",
         { "w-full": fullWidth },
         dataVariants[variants[outline ? "outline" : "block"]],
         dataSizes[size],

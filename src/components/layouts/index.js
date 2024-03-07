@@ -1,3 +1,3 @@
-import DefaultLayout from "./DefaultLayout";
+import { Wrapper as DefaultLayout } from "./DefaultLayout";
 
-export default DefaultLayout;
+export { DefaultLayout };

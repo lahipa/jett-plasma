@@ -4,5 +4,6 @@
     "secondary": "relative",
     "warning": "relative",
     "danger": "relative",
-    "success": "relative"
+    "success": "relative",
+    "disabled": ""
 }

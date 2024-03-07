@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Instagram",
+        "icon": "IconBrandInstagram",
+        "url": "https://instagram.com/account"
+    },
+    {
+        "title": "Facebook",
+        "icon": "IconBrandFacebook",
+        "url": "https://facebook.com/account"
+    },
+    {
+        "title": "LinkedIn",
+        "icon": "IconBrandLinkedin",
+        "url": "https://linkedin.com/account"
+    },
+    {
+        "title": "Youtube",
+        "icon": "IconBrandYoutube",
+        "url": "https://youtube.com/account"
+    }
+]

@@ -1,6 +1,6 @@
 import Container from "@/app/@components/container";
 
-export default function About() {
+export default function Studies() {
   return (
     <>
       <section>

@@ -26,6 +26,17 @@ module.exports = {
         success: "#03A08B",
         "surface-success": "#F0FFFD",
         "border-success": "#95C7C0",
+        // -- neutral
+        "neutral-10": "#FFFFFF",
+        "neutral-20": "#F6F6F6",
+        "neutral-30": "#EFEFEF",
+        "neutral-40": "#E4E4E4",
+        "neutral-50": "#C9C9C9",
+        "neutral-60": "#AAAAAA",
+        "neutral-70": "#858585",
+        "neutral-80": "#737373",
+        "neutral-90": "#666687",
+        "neutral-100": "#1E1E1E",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

@@ -1,6 +1,6 @@
 import Container from "./@components/container";
 import { Badge, Icon, Button } from "./@components/base";
-import { CtaHomeHero } from "./@clients";
+import { CtaHomeHero, SliderVideosHome } from "./@clients";
 import CardQuestion from "./@components/card/CardQuestion";
 
 // data
@@ -63,12 +63,47 @@ export default function Home() {
       <section className="relative py-[150px]">
         <Container className="flex items-stretch gap-[14px]">
           <div className="flex-1 flex flex-col gap-[71px]">
-            <p className="">Left</p>
+            <div className="flex flex-col items-center">
+              <div className="w-full max-w-[573px] flex justify-end">
+                <span className="text-[40px] leading-[54px] font-medium">See what happens</span>
+              </div>
+              <div className="w-full max-w-[573px] flex">
+                <span className="text-[40px] leading-[54px] font-medium text-primary italic">before and after treatment</span>
+              </div>
+              <div className="w-full max-w-[573px] flex justify-center">
+                <span className="text-[40px] leading-[54px] font-medium">using Jett Plasma</span>
+              </div>
+            </div>
+
+            <div className="flex items-stretch gap-[14px]">
+              <div className="relative w-[400px] h-[400px] overflow-hidden rounded-[20px]">
+                <div className="absolute px-[14px] h-[32px] top-[10px] left-[10px] bg-[#1C1E22]/50 rounded-full">
+                  <span className="text-white text-[14px] leading-[20px] font-medium">Before</span>
+                </div>
+                <img src="/products/product-26.png" className="w-full h-full" />
+              </div>
+              <div className="flex flex-col gap-[14px] flex-1">
+                <div className="relative w-full h-[193px] overflow-hidden rounded-[20px]">
+                  <div className="absolute px-[14px] h-[32px] top-[10px] left-[10px] bg-[#1C1E22]/50 rounded-full">
+                    <span className="text-white text-[14px] leading-[20px] font-medium">After 10 days</span>
+                  </div>
+                  <img src="/products/product-27.png" className="w-full h-full" />
+                </div>
+                <div className="relative w-full h-[193px] overflow-hidden rounded-[20px]">
+                  <div className="absolute px-[14px] h-[32px] top-[10px] left-[10px] bg-[#1C1E22]/50 rounded-full">
+                    <span className="text-white text-[14px] leading-[20px] font-medium">After 3 months</span>
+                  </div>
+                  <img src="/products/product-28.png" className="w-full h-full" />
+                </div>
+              </div>
+            </div>
           </div>
           <div className="flex-1 flex flex-col gap-[10px]">
-            <p className="">Right</p>
-            <div className="p-[30px]">
-              <p className="text-[24px] leading-[34px]">Jett Plasma allows you to choose between ablative and non-ablative plasma energy to tighten skin, reduce wrinkles, and treat various imperfections, all without incisions or downtime</p>
+            <div className="w-full h-[400px] bg-neutral-50 rounded-[20px]">
+              <p></p>
+            </div>
+            <div className="relative p-[30px]">
+              <p className="text-[24px] leading-[34px] font-medium">Jett Plasma allows you to choose between ablative and non-ablative plasma energy to tighten skin, reduce wrinkles, and treat various imperfections, all without incisions or downtime</p>
             </div>
           </div>
         </Container>
@@ -195,7 +230,7 @@ export default function Home() {
           <h4 className="text-[50px] font-medium leading-[64px] text-center">Suitable for</h4>
           <div className="flex items-end justify-center gap-[80px]">
             <div className="flex flex-col gap-[14px] max-w-[350px]">
-              <Icon icon="IconNeedle" size={50} />
+              <Icon icon="AbiativeIcon" size={50} />
               <h4 className="text-[24px] leading-[34px] font-medium">Ablative Treatments</h4>
               <ul className="list-disc list-outside ml-[30px]">
                 <li>Removal of deep and shallow wrinkles</li>
@@ -207,7 +242,7 @@ export default function Home() {
               </ul>
             </div>
             <div className="flex flex-col gap-[14px] max-w-[350px]">
-              <Icon icon="IconNeedle" size={50} />
+              <Icon icon="NonAbiativeIcon" size={50} />
               <h4 className="text-[24px] leading-[34px] font-medium">Non-Ablative Treatments</h4>
               <ul className="list-disc list-outside ml-[30px]">
                 <li>Face and body lifting</li>
@@ -247,10 +282,10 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="relative py-[100px] bg-black text-white rounded-[80px]">
+      <section className="relative py-[100px] bg-black text-white rounded-[80px] z-[1]">
         <Container className="flex items-stretch gap-[100px]">
-          <div className="w-[395px] relative">
-
+          <div className="w-[395px] relative flex items-center justify-center">
+            <img src="/products/product-25.png" alt="jett pen" className="absolute" />
           </div>
           <div className="flex flex-col gap-[24px] flex-1">
             <h4 className="text-[50px] font-medium leading-[64px]">About Jett Plasma</h4>
@@ -270,11 +305,12 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="relative pt-[150px] pb-[0]">
-        <Container className="flex flex-col gap-[80px]">
+      <section className="relative bg-background pt-[150px] pb-[0] z-[2] flex flex-col gap-[80px]">
+        <Container className="">
           <h4 className="text-[50px] font-medium leading-[64px] text-center">Jett Plasma in Aesthetics</h4>
-          <p className="">Section Eight</p>
         </Container>
+        
+        <SliderVideosHome />
       </section>
 
       <section className="relative pt-[50px] pb-[150px]">
@@ -286,9 +322,9 @@ export default function Home() {
                   Qna
                 </div>
                 <h3 className="text-dark-10 text-[1.75rem] lg:text-[2.8rem] leading-normal font-semibold">Quick answer to questions you may have</h3>
-                <p className="text-dark-10 text-[1rem] font-medium">Can’t find what you’re looking for? Contact us here:
-                  <a href="" className="text-primary underline">info@jett.com
-                  </a>
+                <p className="text-dark-10 text-[1rem] font-medium">
+                  Can’t find what you’re looking for? Contact us here:
+                  <a href="#" className="text-primary underline">info@jett.com</a>
                 </p>
               </div>
               <div className="md:col-span-3">

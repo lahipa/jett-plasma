@@ -9,7 +9,7 @@
 }
 
 body {
-  @apply bg-background text-[#1C1E22] text-base leading-relaxed;
+  @apply bg-background text-[#1C1E22] text-[18px] leading-relaxed;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +20,7 @@ body {
   }
 
   body {
-    @apply !bg-background !text-[#1C1E22] text-base leading-relaxed;
+    @apply !bg-background !text-[#1C1E22] text-[18px] leading-relaxed;
   }
 }
 

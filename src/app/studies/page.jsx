@@ -13,7 +13,7 @@ export default function Studies() {
         <Container>
           <div className="flex flex-col lg:flex-row gap-[1.5rem] lg:gap-[2.5rem] py-[2rem]  lg:py-[4rem] lg:items-center">
             <div className="lg:w-[40%]">
-              <img className="w-full md:w-[70%] lg:w-full" src="/products/product-10.png" alt="" />
+              <img className="w-full md:w-[70%] lg:w-full mix-blend-darken" src="/products/product-10.png" alt="" />
             </div>
             <div className="lg:w-[40%] xl:w-[50%] lg:ms-[2rem]">
               <h1 className="text-dark-10 text-[2rem] mdtext-[3rem] font-semibold	">Studies</h1>

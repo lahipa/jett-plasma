@@ -134,7 +134,7 @@ export default function Home() {
                 <div className="flex flex-col gap-[20px]">
                   {jettPlasmaPenResult.map((list, x) => {
                     return (
-                      <div x={x.toString()} className="flex gap-[10px]">
+                      <div key={x.toString()} className="flex gap-[10px]">
                         <Icon icon={list.icon} size={30} />
                         <span className="flex-1">{list.item}</span>
                       </div>
@@ -213,7 +213,7 @@ export default function Home() {
           <div className="flex flex-wrap items-end justify-center gap-[20px]">
             {jettPlasmaPsycologyEffect.map((effect, x) => {
               return (
-                <div className="relative px-[20px] py-[16px] max-w-[400px] bg-black rounded-[25px]">
+                <div key={x.toString()} className="relative px-[20px] py-[16px] max-w-[400px] bg-black rounded-[25px]">
                   <div className="flex items-start gap-[8px]">
                       <div className="w-[6px] h-[6px] rounded-full bg-white mt-[12px]" />
                       <p className="leading-[28px] text-white flex-1">{effect}</p>
@@ -313,29 +313,24 @@ export default function Home() {
         <SliderVideosHome />
       </section>
 
-      <section className="relative pt-[50px] pb-[150px]">
+      <section className="relative py-[150px]">
         <Container>
-          <div className="relative w-full xl:max-w-[1200px] 2xl:max-w-[1280px]  mx-auto md:px-5 xl:px-0 py-[4rem] lg:py-[6rem]">
-            <div className="grid lg:grid-cols-4 gap-[2rem] lg:gap-[3rem]">
-              <div className="flex flex-col items-start">
-                <div className="border border-dark-10 rounded-full text-[1.25rem] px-[12px] text-dark-10 font-medium mb-[1rem] lg:mb-0">
-                  Qna
-                </div>
-                <h3 className="text-dark-10 text-[1.75rem] lg:text-[2.8rem] leading-normal font-semibold">Quick answer to questions you may have</h3>
-                <p className="text-dark-10 text-[1rem] font-medium">
-                  Can’t find what you’re looking for? Contact us here:
-                  <a href="#" className="text-primary underline">info@jett.com</a>
-                </p>
-              </div>
-              <div className="md:col-span-3">
-                {Question.map((question, index) => (
-                  <CardQuestion
-                    key={index}
-                    title={question.title}
-                    imageSrc={question.imageSrc}
-                  />
-                ))}
-              </div>
+          <div className="flex items-start gap-[100px]">
+            <div className="w-[290px] flex flex-col items-start gap-[24px]">
+              <Badge title="QnA" outline />
+              <h4 className="text-[50px] leading-[64px] font-medium">Quick answer to questions you may have</h4>
+              <p className="leading-[28px]">
+                Can’t find what you’re looking for? Contact us here: <br /> <a href="/" className="text-primary underline">info@jettplasmaeye.com</a>
+              </p>
+            </div>
+            <div className="flex-1 flex flex-col">
+              {Question.map((question, index) => (
+                <CardQuestion
+                  key={index}
+                  title={question.title}
+                  imageSrc={question.imageSrc}
+                />
+              ))}
             </div>
           </div>
         </Container>

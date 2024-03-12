@@ -1,0 +1,16 @@
+{
+    "base": "bg-slate-400 text-white",
+    "disabled": "bg-slate-300 text-white",
+    "primary": "bg-primary text-white",
+    "secondary": "bg-white text-[#1C1E22]",
+    "warning": "bg-warning text-white",
+    "danger": "bg-danger text-white",
+    "success": "bg-success text-white",
+    "outline-base": "border border-[#1C1E22] text-[#1C1E22] focus:ring-[#1C1E22]/30",
+    "outline-disabled": "border border-slate-300 text-slate-300",
+    "outline-primary": "border border-border-primary text-primary focus:ring-primary/30",
+    "outline-secondary": "border border-white text-white",
+    "outline-warning": "border border-border-warning text-warning focus:ring-warning/30",
+    "outline-danger": "border border-border-danger text-danger focus:ring-danger/30",
+    "outline-success": "border border-border-success text-success focus:ring-success/30"
+}

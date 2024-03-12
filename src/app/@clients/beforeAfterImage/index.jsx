@@ -3,9 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import cx from "classnames";
+import { motion, useMotionTemplate, useTransform, useSpring } from "framer-motion";
 import { Icon } from "@/app/@components/base";
 
-const BeforeAfterImage = () => {
+const BeforeAfterImage = ({scrollYProgress}) => {
     const [sliderPosition, setSliderPosition] = useState(50);
     const [isDragging, setIsDragging] = useState(false);
 
@@ -22,6 +23,17 @@ const BeforeAfterImage = () => {
     const handleMouseDown = () => setIsDragging(true);
 
     const handleMouseUp = () => setIsDragging(false);
+
+    // const scrollYProgressSpring = useSpring(scrollYProgress, {
+    //     stiffness: 300,
+    //     damping: 40,
+    // })
+
+    const elementA = useTransform(scrollYProgress, [0, 1], [100, 0]);
+    const elementB = useTransform(scrollYProgress, [0, 1], [0, 100]);
+
+    const elementACalc = useMotionTemplate`calc(${elementA}% - 1px)`
+    const elementBCalc = useMotionTemplate`inset(0 ${elementB}% 0 0)`
 
     return (
         <div className="w-full relative" onMouseUp={handleMouseUp}>
@@ -41,9 +53,9 @@ const BeforeAfterImage = () => {
                     />
                 </div>
 
-                <div
+                <motion.div
                     className="absolute top-0 left-0 right-0 w-full max-w-[700px] max-h-[400px] aspect-[70/45] m-auto overflow-hidden select-none rounded-[20px]"
-                    style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+                    style={{ clipPath: elementBCalc }}
                 >
                     <div className="w-full h-full relative">
                         <div className="absolute px-[14px] h-[32px] top-[10px] left-[10px] bg-[#1C1E22]/50 rounded-full">
@@ -55,10 +67,10 @@ const BeforeAfterImage = () => {
                             className="w-full h-full object-cover"
                         />
                     </div>
-                </div>
-                <div
+                </motion.div>
+                <motion.div
                     className="absolute top-0 bottom-0 w-[2px] bg-white cursor-ew-resize"
-                    style={{ left: `calc(${sliderPosition}% - 1px)` }}
+                    style={{ left: elementACalc }}
                 >
                     <div className={cx("absolute rounded-full w-[50px] h-[50px] left-[calc(50%-25px)] top-[calc(50%-25px)] border-2 border-white", {
                         "cursor-grab": !isDragging,
@@ -69,7 +81,7 @@ const BeforeAfterImage = () => {
                             <Icon icon="IconChevronRight" color="text-white" />
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     );

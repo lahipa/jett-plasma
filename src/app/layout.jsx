@@ -31,6 +31,11 @@ export default function RootLayout({ children }) {
 
               <CtaLayoutContact params={{ route: "/goto" }} />
             </Container>
+
+            <div id="pattern-1" className="absolute -top-[280px] left-0 z-[1]">
+              {/* img should be replace using image component */}
+              <img src="/layouts/pattern-07.svg" alt="pattern-07" />
+            </div>
           </section>
         </main>
 

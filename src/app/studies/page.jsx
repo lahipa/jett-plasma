@@ -2,7 +2,7 @@ import Container from "@/app/@components/container";
 import StudiesCard from "../@components/card/StudiesCard";
 import { Question, Treatments, studiesData } from "../@data";
 import TreatmentCard from "../@components/card/TreatmentCard";
-import { Button } from "../@components/base";
+import { Badge, Button } from "../@components/base";
 import CardQuestion from "../@components/card/CardQuestion";
 
 export default function Studies() {
@@ -46,41 +46,33 @@ export default function Studies() {
             </div>
             <Button
                 className="text-neutral-10 h-[42px] !border-2 !border-neutral-10 px-[14px] rounded-full mt-[1rem] mx-auto"
-                title="SeeMore"
+                title="See More"
                 outline
             />
           </div>
         </div>
       </section>
 
-      <section>
-        <Container>
-          <div className="relative w-full xl:max-w-[1200px] 2xl:max-w-[1280px]  mx-auto md:px-5 xl:px-0 py-[4rem] lg:py-[6rem]">
-            <div className="grid lg:grid-cols-4 gap-[2rem] lg:gap-[3rem]">
-              <div className="flex flex-col items-start">
-                <div className="border border-dark-10 rounded-full text-[1.25rem] px-[12px] text-dark-10 font-medium mb-[1rem] lg:mb-0">
-                  Qna
-                </div>
-                <h3 className="text-dark-10 text-[1.75rem] lg:text-[2.8rem] leading-normal font-semibold">Quick answer to questions you may have</h3>
-                <p className="text-dark-10 text-[1rem] font-medium">Can’t find what you’re looking for? Contact us here:
-                  <a href="" className="text-primary underline">info@jett.com
-                  </a>
-                </p>
-              </div>
-              <div className="md:col-span-3">
-                {Question.map((question, index) => (
-                  <CardQuestion
-                    key={index}
-                    title={question.title}
-                    imageSrc={question.imageSrc}
-                  />
-                ))}
-              </div>
-            </div>
+      <section className="relative py-[150px]">
+        <Container className="flex items-start gap-[100px]">
+          <div className="w-[290px] flex flex-col items-start gap-[24px]">
+            <Badge title="QnA" outline />
+            <h4 className="text-[50px] leading-[64px] font-medium">Quick answer to questions you may have</h4>
+            <p className="leading-[28px]">
+              Can’t find what you’re looking for? Contact us here: <br /> <a href="/" className="text-primary underline">info@jettplasmaeye.com</a>
+            </p>
+          </div>
+          <div className="flex-1 flex flex-col">
+            {Question.map((question, index) => (
+              <CardQuestion
+                key={index}
+                title={question.title}
+                imageSrc={question.imageSrc}
+              />
+            ))}
           </div>
         </Container>
       </section>
-
     </>
   );
 }

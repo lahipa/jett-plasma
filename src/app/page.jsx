@@ -1,6 +1,6 @@
 import Container from "./@components/container";
 import { Badge, Icon, Button } from "./@components/base";
-import { CtaHomeHero, SliderVideosHome } from "./@clients";
+import { CtaHomeHero, SliderVideosHome, BeforeAfterImage } from "./@clients";
 import CardQuestion from "./@components/card/CardQuestion";
 
 // data
@@ -40,6 +40,11 @@ export default function Home() {
             </div>
           </div>
         </Container>
+
+        <div id="pattern-1" className="absolute -bottom-[150px] left-0 z-[1]">
+          {/* img should be replace using image component */}
+          <img src="/layouts/pattern-02.svg" alt="pattern-02" />
+        </div>
       </section>
 
       <section className="relative py-[150px] bg-black text-white rounded-[80px]">
@@ -99,9 +104,9 @@ export default function Home() {
             </div>
           </div>
           <div className="flex-1 flex flex-col gap-[10px]">
-            <div className="w-full h-[400px] bg-neutral-50 rounded-[20px]">
-              <p></p>
-            </div>
+
+            <BeforeAfterImage />
+
             <div className="relative p-[30px]">
               <p className="text-[24px] leading-[34px] font-medium">Jett Plasma allows you to choose between ablative and non-ablative plasma energy to tighten skin, reduce wrinkles, and treat various imperfections, all without incisions or downtime</p>
             </div>
@@ -205,6 +210,11 @@ export default function Home() {
               </p>
           </div>
         </Container>
+
+        <div id="pattern-1" className="absolute top-0 right-0 z-[1]">
+          {/* img should be replace using image component */}
+          <img src="/layouts/pattern-03.svg" alt="pattern-03" />
+        </div>
       </section>
 
       <section className="relative pt-[150px] pb-[0]">
@@ -221,6 +231,11 @@ export default function Home() {
                 </div>
               );
             })}
+          </div>
+
+          <div id="pattern-1" className="absolute -top-[150px] -right-[20px] z-[1]">
+            {/* img should be replace using image component */}
+            <img src="/layouts/pattern-04.svg" alt="pattern-04" />
           </div>
         </Container>
       </section>
@@ -280,6 +295,11 @@ export default function Home() {
             </div>
           </div>
         </Container>
+
+        <div id="pattern-1" className="absolute top-0 left-0 z-[1]">
+          {/* img should be replace using image component */}
+          <img src="/layouts/pattern-05.svg" alt="pattern-05" />
+        </div>
       </section>
 
       <section className="relative py-[100px] bg-black text-white rounded-[80px] z-[1]">
@@ -303,6 +323,11 @@ export default function Home() {
               </ul>
           </div>
         </Container>
+
+        <div id="pattern-1" className="absolute bottom-[100px] right-0 z-[1]">
+          {/* img should be replace using image component */}
+          <img src="/layouts/pattern-06.svg" alt="pattern-06" />
+        </div>
       </section>
 
       <section className="relative bg-background pt-[150px] pb-[0] z-[2] flex flex-col gap-[80px]">
@@ -314,24 +339,22 @@ export default function Home() {
       </section>
 
       <section className="relative py-[150px]">
-        <Container>
-          <div className="flex items-start gap-[100px]">
-            <div className="w-[290px] flex flex-col items-start gap-[24px]">
-              <Badge title="QnA" outline />
-              <h4 className="text-[50px] leading-[64px] font-medium">Quick answer to questions you may have</h4>
-              <p className="leading-[28px]">
-                Can’t find what you’re looking for? Contact us here: <br /> <a href="/" className="text-primary underline">info@jettplasmaeye.com</a>
-              </p>
-            </div>
-            <div className="flex-1 flex flex-col">
-              {Question.map((question, index) => (
-                <CardQuestion
-                  key={index}
-                  title={question.title}
-                  imageSrc={question.imageSrc}
-                />
-              ))}
-            </div>
+        <Container className="flex items-start gap-[100px]">
+          <div className="w-[290px] flex flex-col items-start gap-[24px]">
+            <Badge title="QnA" outline />
+            <h4 className="text-[50px] leading-[64px] font-medium">Quick answer to questions you may have</h4>
+            <p className="leading-[28px]">
+              Can’t find what you’re looking for? Contact us here: <br /> <a href="/" className="text-primary underline">info@jettplasmaeye.com</a>
+            </p>
+          </div>
+          <div className="flex-1 flex flex-col">
+            {Question.map((question, index) => (
+              <CardQuestion
+                key={index}
+                title={question.title}
+                imageSrc={question.imageSrc}
+              />
+            ))}
           </div>
         </Container>
       </section>

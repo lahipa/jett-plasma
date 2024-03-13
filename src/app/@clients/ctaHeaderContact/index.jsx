@@ -5,7 +5,7 @@ import { Button } from "@/app/@components/base";
 
 const CtaHeaderContact = ({ params }) => {
   return (
-    <div className='flex'>
+    <div className='flex flex-col w-full lg:w-fit lg:flex-row'>
         <Button
             title="Contact Us"
             outline

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Container from '../../container';
 import { Button, IconButton, TextInput, TextareaInput } from '../../base';
 
-const Contact = () => {
+const ContactComponent = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -67,4 +67,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactComponent;

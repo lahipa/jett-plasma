@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="relative pt-[100px] pb-[50px]">
       <Container className="flex flex-col gap-[80px]">
-        <div className="flex items-strech justify-between gap-[50px]">
+        <div className="flex flex-col lg:flex-row lg:items-strech lg:justify-between gap-[50px]">
           <div className="flex flex-col max-w-[626px] gap-[30px]">
             <Logo />
             <p className="leading-relaxed">Jett Plasma Lift Medical is backed by years of research and development, as well as numerous clinical studies, ensuring both safety and efficacy for patients. It is Health Canada approved (unlike most Plasma devices) and provides the most advanced technology and versatile treatment options in a medical Plasma device.</p>

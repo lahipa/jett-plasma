@@ -2,85 +2,20 @@ import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Container from "./@components/container";
 import { Badge, Icon, Button } from "./@components/base";
-import { CtaLayoutContact, SliderVideosHome, BeforeAfterImage, HomeSectionOne, HomeSectionFour } from "./@clients";
+import { CtaLayoutContact, SliderVideosHome, BeforeAfterImage, HomeSectionOne, HomeSectionTwo, HomeSectionThree } from "./@clients";
 import CardQuestion from "./@components/card/CardQuestion";
 
 // data
 import { jettPlasmaPenResult, jettPlasmaPsycologyEffect, Question } from './@data';
 
 export default function Home() {
-  
-
   return (
     <>
       <HomeSectionOne />
-
-      <section className="relative py-[150px] bg-black text-white rounded-[80px]">
-        <Container className="flex flex-col gap-[100px]">
-          <div className="flex flex-col lg:flex-row lg:items-end gap-[14px] lg:gap-[100px]">
-            <h4 className="text-[30px] lg:text-[80px] font-medium lg:w-[860px] leading-[40px] lg:leading-[94px]">Elevate Your Aesthetics without the AC: The Unmatched Benefits of DC Current in Plasma Treatment</h4>
-            <div className="flex flex-col gap-[24px] flex-1 items-end">
-              <img src="/products/product-14.png" alt="Product Description" className="w-full max-w-[260px] h-auto" />
-              <p className="leading-[28px] max-w-[260px]">Not all plasma pens are created equal! The Jett Plasma Pen Plasma has emerged as the gold standard for use in ophthalmology, aesthetics, and dermatology, thanks to its superior precision and ability to perform both ablative and non-ablative procedures.</p>
-            </div>
-          </div>
-          <div className="flex items-center justify-center">
-            <img src="/products/product-13.png" alt="Product Pen" className="" />
-          </div>
-          <div className="flex items-center">
-            <p className="leading-[28px] max-w-[860px]">One of the unique features of the Jett Plasma Pen Plasma is its use of direct current (DC). DC offers a more stable and controlled energy output, which is essential for delicate procedures such as non-surgical blepharoplasty, dry eye/MGD/blepharitis treatment, skin tightening, and easy removal of benign vascular and skin lesions. Traditional plasma pens utilizing AC can be more unpredictable and less precise, leading to a higher risk of complications and uneven results. DC technology, means less downtime, less risk of scarring, and more natural-looking results for patients. Jett Plasma Pen is the ideal choice for procedures such as upper and lower eyelid tightening, as well as reducing the appearance of crow's feet and under-eye wrinkles.</p>
-          </div>
-        </Container>
-      </section>
-
-      <section className="relative py-[150px]">
-        <Container className="flex flex-col lg:flex-row items-stretch gap-[14px]">
-          <div className="flex-1 flex flex-col gap-[71px]">
-            <div className="flex flex-col items-center">
-              <div className="w-full max-w-[573px] flex justify-end">
-                <span className="text-[40px] leading-[54px] font-medium">See what happens</span>
-              </div>
-              <div className="w-full max-w-[573px] flex">
-                <span className="text-[40px] leading-[54px] font-medium text-primary italic">before and after treatment</span>
-              </div>
-              <div className="w-full max-w-[573px] flex justify-center">
-                <span className="text-[40px] leading-[54px] font-medium">using Jett Plasma</span>
-              </div>
-            </div>
-
-            <div className="flex items-stretch gap-[14px]">
-              <div className="relative w-[400px] h-[400px] overflow-hidden rounded-[20px]">
-                <div className="absolute px-[14px] h-[32px] top-[10px] left-[10px] bg-[#1C1E22]/50 rounded-full">
-                  <span className="text-white text-[14px] leading-[20px] font-medium">Before</span>
-                </div>
-                <img src="/products/product-26.png" className="w-full h-full" />
-              </div>
-              <div className="flex flex-col gap-[14px] flex-1">
-                <div className="relative w-full h-[193px] overflow-hidden rounded-[20px]">
-                  <div className="absolute px-[14px] h-[32px] top-[10px] left-[10px] bg-[#1C1E22]/50 rounded-full">
-                    <span className="text-white text-[14px] leading-[20px] font-medium">After 10 days</span>
-                  </div>
-                  <img src="/products/product-27.png" className="w-full h-full" />
-                </div>
-                <div className="relative w-full h-[193px] overflow-hidden rounded-[20px]">
-                  <div className="absolute px-[14px] h-[32px] top-[10px] left-[10px] bg-[#1C1E22]/50 rounded-full">
-                    <span className="text-white text-[14px] leading-[20px] font-medium">After 3 months</span>
-                  </div>
-                  <img src="/products/product-28.png" className="w-full h-full" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex-1 flex flex-col gap-[10px]">
-
-            <BeforeAfterImage />
-
-            <div className="relative p-[30px]">
-              <p className="text-[24px] leading-[34px] font-medium">Jett Plasma allows you to choose between ablative and non-ablative plasma energy to tighten skin, reduce wrinkles, and treat various imperfections, all without incisions or downtime</p>
-            </div>
-          </div>
-        </Container>
-      </section>
+    
+      <HomeSectionTwo />
+                
+      <HomeSectionThree/>
 
       <section className="relative pt-[50px] pb-[150px]">
         <Container className="flex flex-col gap-[100px]">

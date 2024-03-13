@@ -1,5 +1,4 @@
-[
-    {
+[{
         "title": "Instagram",
         "icon": "IconBrandInstagram",
         "url": "https://instagram.com/account"
@@ -18,5 +17,4 @@
         "title": "Youtube",
         "icon": "IconBrandYoutube",
         "url": "https://youtube.com/account"
-    }
-]
+}]

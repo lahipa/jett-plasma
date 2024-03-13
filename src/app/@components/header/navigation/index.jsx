@@ -4,7 +4,7 @@ import { navigations } from '@/app/@data';
 
 const Navigation = () => {
   return (
-    <nav className="flex items-center gap-[40px]">
+    <nav className="flex flex-col lg:flex-row items-center gap-[30px] lg:gap-[40px]">
       
       {navigations.map((nav, x) => {
         return (

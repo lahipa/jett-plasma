@@ -2,7 +2,7 @@ import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Container from "./@components/container";
 import { Badge, Icon, Button } from "./@components/base";
-import { CtaHomeHero, SliderVideosHome, HomeSectionThree, HomeSectionOne, HomeSectionTwo } from "./@clients";
+import { CtaLayoutContact, SliderVideosHome, BeforeAfterImage, HomeSectionOne, HomeSectionTwo, HomeSectionThree } from "./@clients";
 import CardQuestion from "./@components/card/CardQuestion";
 
 // data
@@ -12,7 +12,9 @@ export default function Home() {
   return (
     <>
       <HomeSectionOne />
+    
       <HomeSectionTwo />
+                
       <HomeSectionThree/>
 
       <section className="relative pt-[50px] pb-[150px]">
@@ -57,7 +59,7 @@ export default function Home() {
         <Container className="flex flex-col gap-[80px]">
           <div className="flex flex-col items-start gap-[30px]">
             <Badge title="How it Works" outline variant="secondary" />
-            <h4 className="text-[80px] font-medium leading-[94px]">Plasma Unveiled: <br /> Understanding the Science Behind Jett Plasma Pen Medical</h4>
+            <h4 className="text-[30px] lg:text-[80px] font-medium leading-[40px] lg:leading-[94px]">Plasma Unveiled: <br /> Understanding the Science Behind Jett Plasma Pen Medical</h4>
           </div>
           <div className="flex justify-start">
             <p className="text-[30px] leading-[40px] max-w-[710px]">Plasma is one of the four fundamental states of matter, the others being solid, liquid, and gas.</p>
@@ -121,7 +123,7 @@ export default function Home() {
       <section className="relative pt-[150px] pb-[0]">
         <Container className="flex flex-col gap-[80px]">
           <h4 className="text-[50px] font-medium leading-[64px] text-center">Physiological and Therapeutic <br /> Effects of Jett Plasma Pen</h4>
-          <div className="flex flex-wrap items-end justify-center gap-[20px]">
+          <div className="flex flex-col lg:flex-row flex-wrap lg:items-end lg:justify-center gap-[20px]">
             {jettPlasmaPsycologyEffect.map((effect, x) => {
               return (
                 <div key={x.toString()} className="relative px-[20px] py-[16px] max-w-[400px] bg-black rounded-[25px]">
@@ -144,7 +146,7 @@ export default function Home() {
       <section className="relative pt-[150px] pb-[300px]">
         <Container className="flex flex-col gap-[40px]">
           <h4 className="text-[50px] font-medium leading-[64px] text-center">Suitable for</h4>
-          <div className="flex items-end justify-center gap-[80px]">
+          <div className="flex flex-col lg:flex-row items-end justify-center gap-[80px]">
             <div className="flex flex-col gap-[14px] max-w-[350px]">
               <Icon icon="AbiativeIcon" size={50} />
               <h4 className="text-[24px] leading-[34px] font-medium">Ablative Treatments</h4>
@@ -169,7 +171,7 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div className="flex items-stretch gap-[50px]">
+          <div className="flex flex-col lg:flex-row items-stretch gap-[50px]">
             <div className="flex flex-col gap-[14px] flex-1">
               <picture className="w-full h-[250px] flex items-center justify-center">
                 <img src="/products/product-22.png" className="mix-blend-darken" />
@@ -204,7 +206,7 @@ export default function Home() {
       </section>
 
       <section className="relative py-[100px] bg-black text-white rounded-[80px] z-[1]">
-        <Container className="flex items-stretch gap-[100px]">
+        <Container className="flex flex-col lg:flex-row items-stretch gap-[100px]">
           <div className="w-[395px] relative flex items-center justify-center">
             <img src="/products/product-25.png" alt="jett pen" className="absolute" />
           </div>
@@ -240,7 +242,7 @@ export default function Home() {
       </section>
 
       <section className="relative py-[150px]">
-        <Container className="flex items-start gap-[100px]">
+        <Container className="flex flex-col lg:flex-row items-start gap-[100px]">
           <div className="w-[290px] flex flex-col items-start gap-[24px]">
             <Badge title="QnA" outline />
             <h4 className="text-[50px] leading-[64px] font-medium">Quick answer to questions you may have</h4>
@@ -258,6 +260,21 @@ export default function Home() {
             ))}
           </div>
         </Container>
+      </section>
+
+      <section className="relative py-[80px] bg-black rounded-[80px]">
+        <Container className="flex flex-col lg:flex-row items-center justify-between gap-[30px]">
+          <h4 className="text-[50px] font-medium text-white leading-[64px] max-w-[846px]">
+            Optimize Your Performance with Jett Plasma - The Latest Solution for Innovative Medical Procedures
+          </h4>
+
+          <CtaLayoutContact params={{ route: "/goto" }} />
+        </Container>
+
+        <div id="pattern-1" className="absolute -top-[280px] left-0 z-[1]">
+          {/* img should be replace using image component */}
+          <img src="/layouts/pattern-07.svg" alt="pattern-07" />
+        </div>
       </section>
     </>
   );

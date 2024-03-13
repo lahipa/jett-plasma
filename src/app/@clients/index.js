@@ -1,3 +1,4 @@
+import HeaderMobile from "./headerMobile";
 import CtaHomeHero from "./ctaHomeHero";
 import CtaHeaderContact from "./ctaHeaderContact";
 import CtaLayoutContact from "./ctaLayoutContact";
@@ -7,6 +8,7 @@ import BeforeAfterImage from "./beforeAfterImage";
 
 export * from "./homeSections";
 export {
+    HeaderMobile,
     CtaHomeHero,
     CtaHeaderContact,
     CtaLayoutContact,

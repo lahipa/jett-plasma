@@ -2,7 +2,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import Header from "./@components/header";
 import Footer from "./@components/footer";
 import Container from "./@components/container";
-import { CtaLayoutContact } from "./@clients";
+import { HeaderMobile } from "./@clients";
 
 // styling
 import "./globals.css";
@@ -19,8 +19,11 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth">
       <body className={jakartaSans.className}>
         <Header />
+        <HeaderMobile />
 
-        <main className="relative min-h-screen pt-[120px]">
+        <main className="relative min-h-screen "> 
+          {/* pt-[120px] */}
+        
           {children}
 
           {/* <section className="relative py-[80px] bg-black rounded-[80px]">

@@ -24,13 +24,8 @@ const BeforeAfterImage = ({scrollYProgress}) => {
 
     const handleMouseUp = () => setIsDragging(false);
 
-    // const scrollYProgressSpring = useSpring(scrollYProgress, {
-    //     stiffness: 300,
-    //     damping: 40,
-    // })
-
-    const elementA = useTransform(scrollYProgress, [0, 1], [100, 0]);
-    const elementB = useTransform(scrollYProgress, [0, 1], [0, 100]);
+    const elementA = useTransform(scrollYProgress, [0, 1], [100, 30]);
+    const elementB = useTransform(scrollYProgress, [0, 1], [0, 70]);
 
     const elementACalc = useMotionTemplate`calc(${elementA}% - 1px)`
     const elementBCalc = useMotionTemplate`inset(0 ${elementB}% 0 0)`

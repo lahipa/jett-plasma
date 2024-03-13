@@ -2,7 +2,7 @@
 
 import Container from "@/app/@components/container";
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 
 const HomeSectionTwo = () => {
@@ -13,9 +13,15 @@ const HomeSectionTwo = () => {
     offset: ["start start", "end start"],
   });
 
+  const scrollYProgressSpring = useSpring(scrollYProgress, {
+    stiffness: 300,
+    damping: 40,
+  })
+
   const elementA = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const elementB = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
-  const elementC = useTransform(scrollYProgress, [0, 1], ["5%", "6%"]);
+  const elementC = useTransform(scrollYProgressSpring, [1, 0], [0, 70])
+  const elementCX = useTransform(scrollYProgressSpring, [0, 1], ["-10%", "15%"])
 
   return (
     <section ref={ref} className="relative py-[150px] bg-black text-white rounded-[80px]">
@@ -27,7 +33,7 @@ const HomeSectionTwo = () => {
             <p className="leading-[28px] max-w-[260px]">Not all plasma pens are created equal! The Jett Plasma Pen Plasma has emerged as the gold standard for use in ophthalmology, aesthetics, and dermatology, thanks to its superior precision and ability to perform both ablative and non-ablative procedures.</p>
           </div>
         </div>
-        <motion.div className="flex items-center justify-center" style={{ x: elementC }}>
+        <motion.div className="flex items-center justify-center w-full" style={{x: elementCX}}>
           <img src="/products/product-29.png" alt="Product Pen" className="" />
         </motion.div>
         <motion.div className="flex items-center"   style={{ y: elementA }}>

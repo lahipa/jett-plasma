@@ -2,7 +2,7 @@
 
 import Container from "@/app/@components/container";
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 
 const HomeSectionTwo = () => {
@@ -13,9 +13,15 @@ const HomeSectionTwo = () => {
     offset: ["start start", "end start"],
   });
 
+  const scrollYProgressSpring = useSpring(scrollYProgress, {
+    stiffness: 300,
+    damping: 40,
+  })
+
   const elementA = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const elementB = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
-  const elementC = useTransform(scrollYProgress, [0, 1], ["5%", "6%"]);
+  const elementC = useTransform(scrollYProgressSpring, [1, 0], [0, 70])
+  const elementCX = useTransform(scrollYProgressSpring, [0, 1], ["-10%", "15%"])
 
   return (
     <section ref={ref} className="relative py-[80px] lg:py-[150px] bg-black text-white rounded-[40px] lg:rounded-[80px] overflow-hidden">

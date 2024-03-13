@@ -1,7 +1,8 @@
-"use client"
+"use client";
+
 import React, { useState } from 'react';
-import Container from '../../container';
-import { Button, IconButton, TextInput, TextareaInput } from '../../base';
+import { Button, IconButton, TextInput, TextareaInput } from '@/app/@components/base';
+import Container from '@/app/@components/container';
 
 const ContactComponent = () => {
   const [formData, setFormData] = useState({

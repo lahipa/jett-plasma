@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Button, IconButton } from '@/app/@components/base';
 
-const StudiesCard = ({ image, code, name, description }) => {
+const StudiesCard = forwardRef(({ image, code, name, description }, ref) => {
   return (
-    <div className="flex flex-col gap-[22px]">
+    <div ref={ref} className="flex flex-col gap-[22px]">
       <div className="relative bg-black overflow-hidden aspect-square rounded-[30px]">
         <img className="w-full h-full object-cover" src={image} alt="img-treatments" />
       </div>
@@ -24,6 +24,6 @@ const StudiesCard = ({ image, code, name, description }) => {
       </div>
     </div>
   );
-};
+});
 
 export default StudiesCard;

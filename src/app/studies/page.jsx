@@ -1,6 +1,6 @@
 import Container, { FullWidthContainer } from "@/app/@components/container";
 import { Badge, Button, IconButton } from "../@components/base";
-import { CtaLayoutContact } from "../@clients";
+import { CtaLayoutContact, StudiesList, StudiesClient } from "../@clients";
 import StudiesCard from "../@components/card/StudiesCard";
 import TreatmentCard from "../@components/card/TreatmentCard";
 import CardQuestion from "../@components/card/CardQuestion";
@@ -8,7 +8,11 @@ import CardQuestion from "../@components/card/CardQuestion";
 // data
 import { studiesData, Question, Treatments } from "../@data";
 
+
 export default function Studies() {
+
+  
+
   return (
     <>
       <section className="relative pt-[150px] pb-[50px]">
@@ -31,16 +35,10 @@ export default function Studies() {
           <img src="/layouts/pattern-09.svg" alt="pattern-09" className="w-[344px] h-auto" />
         </div>
       </section>
-      
-      <section className="relative pt-[100px] pb-[150px]">
-        <Container className="flex flex-col gap-[50px] lg:gap-[80px]">
-          <div className="grid  md:grid-cols-2 lg:grid-cols-3 gap-x-[30px] lg:gap-x-[50px] gap-y-[50px]">
-            {studiesData.map((item, index) => (
-              <StudiesCard key={index} {...item} />
-            ))}
-          </div>
-        </Container>
-      </section>
+
+      <StudiesClient>
+        <StudiesList/>
+      </StudiesClient>
 
       <section className="relative py-[80px] lg:py-[100px] bg-black text-white rounded-[40px] lg:rounded-[80px] z-[1]">
         <Container className="flex flex-col gap-[40px] lg:gap-[100px]">

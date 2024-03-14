@@ -1,7 +1,7 @@
   // Function to handle input changes
   import dynamic from 'next/dynamic';
 
-  const DynamicContact = dynamic(() => import('../@components/@client/contact'), { ssr: false });
+  const DynamicContact = dynamic(() => import('../@clients/ContactComponent'));
   
   const ContactPage = () => {
     return (

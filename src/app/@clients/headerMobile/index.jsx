@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { CtaHeaderContact, LangSelector } from "@/app/@clients";
 import Container from "@/app/@components/container";
+import { Icon } from "@/app/@components/base";
 import Logo from "@/app/@components/logo";
 import Navigation from "@/app/@components/header/navigation";
 
@@ -19,7 +20,9 @@ const HeaderMobile = () => {
           <Logo />
         </div>
         <div>
-          <button onClick={onClickToggle}>X</button>
+          <button onClick={onClickToggle}>
+            <Icon icon={open ? "IconX" : "IconMenu2"} size={24} />
+          </button>
         </div>
       </div>
 
@@ -28,7 +31,6 @@ const HeaderMobile = () => {
           <div className="relative px-6 pt-[20px] flex flex-col gap-[60px]">
 
             <Navigation />
-
 
             <div className="flex flex-col items-center gap-[30px]">
               <LangSelector />

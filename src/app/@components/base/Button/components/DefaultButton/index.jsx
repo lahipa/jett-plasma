@@ -2,12 +2,13 @@
 
 import React from "react";
 import cx from "classnames";
+import { Icon } from "@/app/@components/base";
 import { dataVariants, dataSizes } from "../../data";
 
 const Button = (props) => {
   const { 
     as, className,  outline, type = "button", title = "Button", disabled, fullWidth,
-    size = "base", variant = "base",
+    size = "base", variant = "base", icon, iconPosition = "left", 
     ...rest
   } = props;
 
@@ -24,13 +25,18 @@ const Button = (props) => {
       {...rest}
       className={cx(
         "relative font-semibold rounded-full focus:outline-none whitespace-nowrap",
-        { "w-full": fullWidth },
+        { 
+          "w-full": fullWidth,
+          "flex gap-[8px]": !!icon,
+          "flex-row-reverse": iconPosition === "left"
+        },
         dataVariants[variants[outline ? "outline" : "block"]],
-        dataSizes[size],
+        dataSizes.defaultButton[size],
         className,
       )}
     >
       <span>{title}</span>
+      {icon && <Icon icon={icon} size={20} />}
     </Component>
   );
 };

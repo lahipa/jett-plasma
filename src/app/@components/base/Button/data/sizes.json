@@ -1,6 +1,14 @@
 {
-    "xs": "h-[28px] px-[16px] text-tiny focus:ring-1g",
-    "sm": "h-[32px] px-[16px] text-tiny focus:ring-2",
-    "base": "h-[40px] px-[20px] text-base focus:ring-2",
-    "lg": "h-[50px] px-[24px] text-base focus:ring-2"
+    "defaultButton": {
+        "xs": "h-[28px] px-[16px] text-tiny focus:ring-1g",
+        "sm": "h-[32px] px-[16px] text-tiny focus:ring-2",
+        "base": "h-[40px] px-[20px] text-base focus:ring-2",
+        "lg": "h-[50px] px-[24px] text-base focus:ring-2"
+    },
+    "iconButton": {
+        "xs": "h-[28px] w-[28px] focus:ring-1g",
+        "sm": "h-[32px] w-[32px] focus:ring-2",
+        "base": "h-[40px] w-[40px] focus:ring-2",
+        "lg": "h-[50px] w-[50px] focus:ring-2"
+    }
 }

@@ -1,17 +1,27 @@
 import React from 'react';
+import { Button, IconButton } from '@/app/@components/base';
 
 const StudiesCard = ({ image, code, name, description }) => {
   return (
-    <div className="h-full flex items-start flex-col ">
-      <div className="overflow-hidden aspect-square w-full rounded-[25px] mb-[0.5rem]">
-        <img className="w-full h-full" src={image} alt="" />
+    <div className="flex flex-col gap-[22px]">
+      <div className="relative bg-black overflow-hidden aspect-square rounded-[30px]">
+        <img className="w-full h-full object-cover" src={image} alt="img-treatments" />
       </div>
-      <p className="text-blue-400 mb-[0.5rem] font-normal">{code}</p>
-      <h4 className="text-dark-10 mb-[0.5rem] text-[1.25rem] font-medium">{name}</h4>
-      <p className="text-dark-10 font-normal mb-[1rem]">{description}</p>
-      <button className="rounded-full border-dark-10 border font-medium px-[12px] py-[8px] text-dark-10 mt-auto">
-        Learn More
-      </button>
+      <div className="flex-1 flex flex-col gap-[14px]">
+        <span className="text-[16px] leading-[24px] text-[#636A79]">{code}</span>
+        <div className="flex-1 flex flex-col items-start gap-[24px]">
+          <div className="flex flex-col gap-[10px]">
+            <h4 className="text-[24px] leading-[34px]">{name}</h4>
+            <p className="text-[16px] leading-[24px]">{description}</p>
+          </div>
+
+          <Button
+            title="Learn More"
+            className="mt-auto"
+            outline
+          />
+        </div>
+      </div>
     </div>
   );
 };

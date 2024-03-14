@@ -1,33 +1,40 @@
-import Container from "@/app/@components/container";
+import Container, { FullWidthContainer } from "@/app/@components/container";
+import { Badge, Button, IconButton } from "../@components/base";
+import { CtaLayoutContact } from "../@clients";
 import StudiesCard from "../@components/card/StudiesCard";
-import { Question, Treatments, studiesData } from "../@data";
 import TreatmentCard from "../@components/card/TreatmentCard";
-import { Badge, Button } from "../@components/base";
 import CardQuestion from "../@components/card/CardQuestion";
+
+// data
+import { studiesData, Question, Treatments } from "../@data";
 
 export default function Studies() {
   return (
     <>
-      <section className="relative">
-        <img className="absolute w-[160px] md:w-auto top-[50%] lg:top-0 right-0 z-10" src="/layouts/pattern-09.svg" alt="" />
-        <Container>
-          <div className="flex flex-col lg:flex-row gap-[1.5rem] lg:gap-[2.5rem] py-[2rem]  lg:py-[4rem] lg:items-center">
-            <div className="lg:w-[40%]">
-              <img className="w-full md:w-[70%] lg:w-full mix-blend-darken" src="/products/product-10.png" alt="" />
-            </div>
-            <div className="lg:w-[40%] xl:w-[50%] lg:ms-[2rem]">
-              <h1 className="text-dark-10 text-[2rem] mdtext-[3rem] font-semibold	">Studies</h1>
-              <p className="text-dark-10 text-[1.125rem] md:text-[1.375rem] font-medium	">
-                Dive into the science behind this versatile technology, understanding its principles, properties, and diverse applications.
-              </p>
-            </div>
+      <section className="relative pt-[150px] pb-[50px]">
+        <Container className="flex flex-col lg:flex-row items-center gap-[10px] lg:gap-[100px]">
+          <div className="relative w-full lg:w-[450px] h-[191px] lg:h-[240px] mix-blend-darken">
+            <img className="w-full h-full object-cover" src="/products/product-10.png" alt="" />
+          </div>
+
+          <div className="flex-1 relative flex flex-col gap-[14px]">
+            <h4 className="text-[40px] lg:text-[70px] font-medium leading-[54px] lg:leading-[88px]">
+              Studies
+            </h4>
+            <p className="text-[24px] md:text-[30px] leading-[34px] md:leading-[40px]">
+              Dive into the science behind this versatile technology, understanding its principles, properties, and diverse applications.
+            </p>
           </div>
         </Container>
+
+        <div id="pattern-1" className="hidden md:block absolute top-[50px] right-0 z-[1]">
+          <img src="/layouts/pattern-09.svg" alt="pattern-09" className="w-[344px] h-auto" />
+        </div>
       </section>
       
-      <section>
-        <Container>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-[2rem] md:gap-6 pt-[1rem] pb-[6rem]">
+      <section className="relative pt-[100px] pb-[150px]">
+        <Container className="flex flex-col gap-[50px] lg:gap-[80px]">
+          <div className="grid  md:grid-cols-2 lg:grid-cols-3 gap-x-[30px] lg:gap-x-[50px] gap-y-[50px]">
             {studiesData.map((item, index) => (
               <StudiesCard key={index} {...item} />
             ))}
@@ -35,29 +42,36 @@ export default function Studies() {
         </Container>
       </section>
 
-      <section>
-        <div className="bg-black rounded-[50px] lg:rounded-[80px]">
-          <div className="flex-col relative w-full xl:max-w-[1200px] 2xl:max-w-[1280px]  mx-auto px-6 xl:px-0 flex items-start justify-between gap-[30px] py-[3rem]">
-            <h2 className="text-neutral-10 text-[1.75rem] lg:text-[2.75rem] mb-[2rem] ">Check Out Our Exciting Videos on Jett plasma Applications</h2>
-            <div className="grid  md:grid-cols-2 lg:grid-cols-3 gap-[2rem] pb-[2rem]">
-              {Treatments.map((treatment, index) => (
-                <TreatmentCard key={index} imageSrc={treatment.imageSrc} title={treatment.title} className='text-gray-10 !font-normal' />
-              ))}
+      <section className="relative py-[80px] lg:py-[100px] bg-black text-white rounded-[40px] lg:rounded-[80px] z-[1]">
+        <Container className="flex flex-col gap-[40px] lg:gap-[100px]">
+          <h4 className="text-[30px] lg:text-[50px] font-medium leading-[40px] lg:leading-[64px]">Check Out Our Exciting Videos on Jett plasma Applications</h4>
+          <div className="flex flex-col gap-[80px]">
+            <div className="flex items-stretch gap-[50px]">
+              {Treatments.slice(0, 3).map((treatment, index) => {
+                return (
+                  <div key={index} className="flex-1">
+                    <TreatmentCard key={index} cover={treatment.imageSrc} title={treatment.title} />
+                  </div>
+                );
+              })}
             </div>
-            <Button
-                className="text-neutral-10 h-[42px] !border-2 !border-neutral-10 px-[14px] rounded-full mt-[1rem] mx-auto"
+            <div className="flex justify-center">
+              <Button
+                variant="white"
                 title="See More"
+                size="lg"
                 outline
-            />
+              />
+            </div>
           </div>
-        </div>
+        </Container>
       </section>
 
-      <section className="relative py-[150px]">
-        <Container className="flex items-start gap-[100px]">
-          <div className="w-[290px] flex flex-col items-start gap-[24px]">
+      <section className="relative py-[80px] lg:py-[150px]">
+        <Container className="flex flex-col lg:flex-row items-start gap-[30px] lg:gap-[100px]">
+          <div className="w-full lg:w-[290px] flex flex-col items-start gap-[24px]">
             <Badge title="QnA" outline />
-            <h4 className="text-[50px] leading-[64px] font-medium">Quick answer to questions you may have</h4>
+            <h4 className="text-[30px] lg:text-[50px] leading-[40px] lg:leading-[64px] font-medium">Quick answer to questions you may have</h4>
             <p className="leading-[28px]">
               Can’t find what you’re looking for? Contact us here: <br /> <a href="/" className="text-primary underline">info@jettplasmaeye.com</a>
             </p>
@@ -72,6 +86,20 @@ export default function Studies() {
             ))}
           </div>
         </Container>
+      </section>
+
+      <section className="relative py-[80px] bg-black rounded-[40px] lg:rounded-[80px]">
+        <Container className="flex flex-col lg:flex-row items-center justify-between gap-[30px]">
+          <h4 className="text-[30px] lg:text-[50px] text-center lg:text-left font-medium text-white leading-[40px] lg:leading-[64px] max-w-[846px]">
+            Optimize Your Performance with Jett Plasma - The Latest Solution for Innovative Medical Procedures
+          </h4>
+
+          <CtaLayoutContact params={{ route: "/goto" }} />
+        </Container>
+
+        <div id="pattern-1" className="hidden lg:block absolute -top-[280px] left-0 z-[1]">
+          <img src="/layouts/pattern-07.svg" alt="pattern-07" />
+        </div>
       </section>
     </>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 
-const VideosLoading = () => {
+const ContactLoading = () => {
   return (
     <div>
       <p>Loading</p>
@@ -8,4 +8,4 @@ const VideosLoading = () => {
   );
 };
 
-export default VideosLoading;
+export default ContactLoading;

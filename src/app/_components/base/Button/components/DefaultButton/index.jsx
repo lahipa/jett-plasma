@@ -27,7 +27,7 @@ const Button = (props) => {
         "relative font-semibold rounded-full focus:outline-none whitespace-nowrap",
         { 
           "w-full": fullWidth,
-          "flex gap-[8px]": !!icon,
+          "flex gap-[8px] items-center justify-center": !!icon,
           "flex-row-reverse": iconPosition === "left"
         },
         dataVariants[variants[outline ? "outline" : "block"]],
@@ -36,7 +36,7 @@ const Button = (props) => {
       )}
     >
       <span>{title}</span>
-      {icon && <Icon icon={icon} size={20} />}
+      {icon && <Icon icon={icon} size={20} color="text-inherit" />}
     </Component>
   );
 };

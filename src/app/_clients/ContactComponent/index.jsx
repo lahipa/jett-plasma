@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Container from '@/app/_components/container';
-import { Button, IconButton, TextInput, TextareaInput } from '@/app/_components/base';
+import { Button, TextInput, TextareaInput } from '@/app/_components/base';
 
 const ContactComponent = () => {
   const [formData, setFormData] = useState({
@@ -51,11 +51,14 @@ const ContactComponent = () => {
             <TextInput label="Email Address" placeholder="Enter email address" className="w-full " type="text" name="email" value={formData.email} onChange={handleInputChange} />
             <TextInput label="Phone" placeholder="Enter phone" className="w-full" name="phone" value={formData.phone} onChange={handleInputChange} />
             <TextareaInput label="Message" placeholder="What you want to ask?" className="w-full" type="text" name="message" value={formData.message} onChange={handleInputChange} />
-            <IconButton
+
+            <Button
               title="Send"
               className="w-[136px] !bg-dark-10"
-              type="submit" 
-              icon="/layouts/pattern-16.svg"
+              type="submit"
+              icon="IconArrowRight"
+              iconPosition="right"
+              size="lg"
             />
 
           </form>

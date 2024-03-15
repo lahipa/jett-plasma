@@ -1,12 +1,12 @@
-import Container, { FullWidthContainer } from "@/app/@components/container";
-import { Badge, Button, IconButton } from "../@components/base";
-import { CtaLayoutContact } from "../@clients";
-import ProductCard from "../@components/card/ProductsCard";
-import TreatmentCard from "../@components/card/TreatmentCard";
-import CardQuestion from "../@components/card/CardQuestion";
+import Container from "@/app/_components/container";
+import { Badge } from "@/app/_components/base";
+import { CtaLayoutContact } from "@/app/_clients";
+import { VideoItemCard, StudyLatestCard } from "@/app/videos/_components";
+import { BtnHeroBanner, BtnSeeMoreStudies } from "@/app/videos/_clients";
+import { CardQuestion } from "@/app/_components/cards";
 
 // data
-import { Products, Question, Treatments } from "../@data";
+import { Products, Question, Treatments } from "@/app/_data";
 // import { limitContentText } from "@/utils/globals";
 
 export default function Videos() {
@@ -17,23 +17,7 @@ export default function Videos() {
           <div className="relative w-full md:w-[454px] lg:w-[769px] h-[246px] md:h-[314px] lg:h-[536px] rounded-[20px] overflow-hidden">
             <img className="w-full h-full object-cover" src="/products/product-2.png" alt="" />
 
-            <div className="absolute bottom-0 w-full p-[20px] flex flex-row items-center gap-[10px]">
-              <IconButton
-                variant="white"
-                icon="IconPlayerPlayFilled"
-                className="bg-[#1C1E22]/20 lg:mr-auto"
-                size="lg"
-                outline
-              />
-
-              <IconButton
-                variant="white"
-                icon="IconDownload"
-                className="bg-[#1C1E22]/20"
-                size="lg"
-                outline
-              />
-            </div>
+            <BtnHeroBanner />
           </div>
 
           <div className="flex-1 relative flex flex-col gap-[14px]">
@@ -55,13 +39,16 @@ export default function Videos() {
       <section className="relative pt-[100px] pb-[150px]">
         <Container className="flex flex-col gap-[50px] lg:gap-[80px]">
           <div className="grid  md:grid-cols-2 lg:grid-cols-3 gap-x-[30px] lg:gap-x-[50px] gap-y-[50px]">
-            {Treatments.map((treatment, index) => (
-              <TreatmentCard key={index} cover={treatment.imageSrc} title={treatment.title} />
-            ))}
+            {Treatments.map((item, index) => {
+              return (
+                <VideoItemCard key={index} cover={item.imageSrc} title={item.title} slug={item.slug} duration="10.12" />
+              );
+            })}
           </div>
           
-          <div className="flex justify-center">
-              <p>Pagination</p>
+          <div className="flex flex-col items-center">
+              <p>Load More</p>
+              <span>...</span>
           </div>
         </Container>
       </section>
@@ -74,19 +61,13 @@ export default function Videos() {
               {Products.slice(0, 3).map((product, index) => {
                 return (
                   <div key={index} className="flex-1">
-                    <ProductCard {...product} />
+                    <StudyLatestCard cover={product.imageSrc} code={product.code} name={product.name} description={product.description} />
                   </div>
                 );
               })}
             </div>
-            <div className="flex justify-center">
-              <Button
-                variant="white"
-                title="See More"
-                size="lg"
-                outline
-              />
-            </div>
+            
+            <BtnSeeMoreStudies />
           </div>
         </Container>
       </section>
@@ -110,20 +91,6 @@ export default function Videos() {
             ))}
           </div>
         </Container>
-      </section>
-
-      <section className="relative py-[80px] bg-black rounded-[40px] lg:rounded-[80px]">
-        <Container className="flex flex-col lg:flex-row items-center justify-between gap-[30px]">
-          <h4 className="text-[30px] lg:text-[50px] text-center lg:text-left font-medium text-white leading-[40px] lg:leading-[64px] max-w-[846px]">
-            Optimize Your Performance with Jett Plasma - The Latest Solution for Innovative Medical Procedures
-          </h4>
-
-          <CtaLayoutContact params={{ route: "/goto" }} />
-        </Container>
-
-        <div id="pattern-1" className="hidden lg:block absolute -top-[280px] left-0 z-[1]">
-          <img src="/layouts/pattern-07.svg" alt="pattern-07" />
-        </div>
       </section>
     </>
   );

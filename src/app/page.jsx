@@ -1,12 +1,12 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Container from "./@components/container";
-import { Badge, Icon, Button } from "./@components/base";
-import { CtaLayoutContact, SliderVideosHome, BeforeAfterImage, HomeSectionOne, HomeSectionTwo, HomeSectionThree } from "./@clients";
-import CardQuestion from "./@components/card/CardQuestion";
+import Container from "@/app/_components/container";
+import { Badge, Icon, Button } from "@/app/_components/base";
+import { CtaLayoutContact, SliderVideosHome, BeforeAfterImage, HomeSectionOne, HomeSectionTwo, HomeSectionThree } from "@/app/_clients";
+import { CardQuestion } from "@/app/_components/cards";
 
 // data
-import { jettPlasmaPenResult, jettPlasmaPsycologyEffect, Question } from './@data';
+import { jettPlasmaPenResult, jettPlasmaPsycologyEffect, Question } from '@/app/_data';
 
 export default function Home() {
   return (

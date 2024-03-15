@@ -1,8 +1,8 @@
 import { Plus_Jakarta_Sans } from "next/font/google";
-import Header from "./@components/header";
-import Footer from "./@components/footer";
-import Container from "./@components/container";
-import { HeaderMobile } from "./@clients";
+import Header from "@/app/_components/header";
+import Footer from "@/app/_components/footer";
+import Container from "@/app/_components/container";
+import { HeaderMobile } from "@/app/_clients";
 
 // styling
 import "./globals.css";

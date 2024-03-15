@@ -1,6 +1,6 @@
 import Container from "@/app/_components/container";
 
-export default function About() {
+export default function VideosDetail() {
   return (
     <>
       <section>
@@ -10,7 +10,7 @@ export default function About() {
       </section>
       <section>
         <Container>
-          <p>About Content</p>
+          <p>Videos Detail</p>
         </Container>
       </section>
     </>

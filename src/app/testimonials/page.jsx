@@ -1,6 +1,6 @@
 import React from 'react'
-import Container from '../@components/container'
-import { CardTestimony } from '../@components/card/CardTestimony'
+import Container from '@/app/_components/container';
+import { CardTestimony } from '@/app/_components/cards';
 
 const Testimonials = () => {
   const testimonials = [

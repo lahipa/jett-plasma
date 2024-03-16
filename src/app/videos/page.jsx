@@ -13,6 +13,8 @@ import { FaqList } from "../studies/_clients";
 export default function Videos() {
   return (
     <ClientProvider>
+      <div className="h-[70px] lg:hidden" />
+      
       <VideoList/>
 
       <StudyList/>
@@ -26,7 +28,8 @@ export default function Videos() {
               Can’t find what you’re looking for? Contact us here: <br /> <a href="/" className="text-primary underline">info@jettplasmaeye.com</a>
             </p>
           </div>
-          <FaqList/>
+
+          <FaqList />
         </Container>
       </section>
     </ClientProvider>

@@ -4,10 +4,12 @@ import React from 'react';
 import { useGetStudiesFormatted } from '@/hooks/useStudiesQuery';
 import { StudyItemCard } from '../../_components';
 import Container from '@/app/_components/container';
+import { SquarePlaceholder } from "@/app/_components/base";
 
 const StudyList = () => {
 
     const {
+        isLoading,
         data,
         title,
         description,
@@ -24,10 +26,12 @@ const StudyList = () => {
 
                     <div className="flex-1 relative flex flex-col gap-[14px]">
                         <h4 className="text-[40px] lg:text-[70px] font-medium leading-[54px] lg:leading-[88px]">
-                            {title}
+                            {/* {title} */}
+                            Studies
                         </h4>
                         <p className="text-[24px] md:text-[30px] leading-[34px] md:leading-[40px]">
-                            {description}
+                            {/* {description} */}
+                            Dive into the science behind this versatile technology, understanding its principles, properties, and diverse applications.
                         </p>
                     </div>
                 </Container>
@@ -40,7 +44,24 @@ const StudyList = () => {
             <section className="relative pt-[100px] pb-[150px]">
                 <Container className="flex flex-col gap-[50px] lg:gap-[80px]">
                     <div className="grid  md:grid-cols-2 lg:grid-cols-3 gap-x-[30px] lg:gap-x-[50px] gap-y-[50px]">
-                        {data.map((item, index) => (
+                        {isLoading && [...Array(6)].map((_, x) => {
+                            return (
+                                <div key={x} className="flex flex-col gap-[22px]">
+                                    <SquarePlaceholder width="100%" height={300} />
+                                    <div className="flex-1 flex flex-col gap-[30px]">
+                                        <div className="flex flex-col gap-[10px]">
+                                            <SquarePlaceholder width={200} height={20} />
+                                            <SquarePlaceholder width="100%" height={20} />
+                                            <SquarePlaceholder width={150} height={20} />
+                                        </div>
+
+                                        <SquarePlaceholder width={150} height={50} />
+                                    </div>
+                                </div>
+                            );
+                        })}
+
+                        {!isLoading && data.map((item, index) => (
                             <StudyItemCard
                                 ref={index === data.length - 1 ? lastElementRef : undefined}
                                 key={index}
@@ -49,10 +70,10 @@ const StudyList = () => {
                         ))}
                     </div>
 
-                    <div className="flex flex-col items-center">
+                    {/* <div className="flex flex-col items-center">
                         <p>Load More</p>
                         <span>...</span>
-                    </div>
+                    </div> */}
                 </Container>
             </section>
         </>

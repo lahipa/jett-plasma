@@ -1,76 +1,21 @@
 import Container from "@/app/_components/container";
 import { Badge } from "@/app/_components/base";
-import { CtaLayoutContact } from "@/app/_clients";
+import { ClientProvider, CtaLayoutContact } from "@/app/_clients";
 import { VideoItemCard, StudyLatestCard } from "@/app/videos/_components";
-import { BtnHeroBanner, BtnSeeMoreStudies } from "@/app/videos/_clients";
+import { BtnHeroBanner, BtnSeeMoreStudies, StudyList, VideoList } from "@/app/videos/_clients";
 import { CardQuestion } from "@/app/_components/cards";
 
 // data
 import { Products, Question, Treatments } from "@/app/_data";
+import { FaqList } from "../studies/_clients";
 // import { limitContentText } from "@/utils/globals";
 
 export default function Videos() {
   return (
-    <>
-      <section className="relative py-[50px]">
-        <Container className="flex flex-col lg:flex-row-reverse lg:items-end gap-[50px] lg:gap-[80px]">
-          <div className="relative w-full md:w-[454px] lg:w-[769px] h-[246px] md:h-[314px] lg:h-[536px] rounded-[20px] overflow-hidden">
-            <img className="w-full h-full object-cover" src="/products/product-2.png" alt="" />
+    <ClientProvider>
+      <VideoList/>
 
-            <BtnHeroBanner />
-          </div>
-
-          <div className="flex-1 relative flex flex-col gap-[14px]">
-            <h4 className="text-[30px] lg:text-[50px] font-medium leading-[40px] lg:leading-[64px]">
-              {/* {limitContentText("Introducing JETT PLASMA Laser", 24)} */}
-              Introducing <br /> JETT PLASMA...
-            </h4>
-            <p className="text-[24px] md:text-[20px] leading-[34px] md:leading-[30px]">
-              JETT is a brand providing Innovation, Reliability and Technology. Our R&D department continuously focuses its efforts on developing the right products in cooperation with leading experts in medical fields.
-            </p>
-          </div>
-        </Container>
-
-        <div id="pattern-1" className="hidden md:block absolute top-[40px] left-0 z-[1]">
-          <img src="/layouts/pattern-12.svg" alt="pattern-07" className="w-[344px] h-auto" />
-        </div>
-      </section>
-
-      <section className="relative pt-[100px] pb-[150px]">
-        <Container className="flex flex-col gap-[50px] lg:gap-[80px]">
-          <div className="grid  md:grid-cols-2 lg:grid-cols-3 gap-x-[30px] lg:gap-x-[50px] gap-y-[50px]">
-            {Treatments.map((item, index) => {
-              return (
-                <VideoItemCard key={index} cover={item.imageSrc} title={item.title} slug={item.slug} duration="10.12" />
-              );
-            })}
-          </div>
-          
-          <div className="flex flex-col items-center">
-              <p>Load More</p>
-              <span>...</span>
-          </div>
-        </Container>
-      </section>
-
-      <section className="relative py-[80px] lg:py-[100px] bg-black text-white rounded-[40px] lg:rounded-[80px] z-[1]">
-        <Container className="flex flex-col gap-[40px] lg:gap-[100px]">
-          <h4 className="text-[30px] lg:text-[50px] font-medium leading-[40px] lg:leading-[64px]">Discover Our Latest Findings</h4>
-          <div className="flex flex-col gap-[80px]">
-            <div className="flex items-stretch gap-[50px]">
-              {Products.slice(0, 3).map((product, index) => {
-                return (
-                  <div key={index} className="flex-1">
-                    <StudyLatestCard cover={product.imageSrc} code={product.code} name={product.name} description={product.description} />
-                  </div>
-                );
-              })}
-            </div>
-            
-            <BtnSeeMoreStudies />
-          </div>
-        </Container>
-      </section>
+      <StudyList/>
 
       <section className="relative py-[80px] lg:py-[150px]">
         <Container className="flex flex-col lg:flex-row items-start gap-[30px] lg:gap-[100px]">
@@ -81,17 +26,9 @@ export default function Videos() {
               Can’t find what you’re looking for? Contact us here: <br /> <a href="/" className="text-primary underline">info@jettplasmaeye.com</a>
             </p>
           </div>
-          <div className="flex-1 flex flex-col">
-            {Question.map((question, index) => (
-              <CardQuestion
-                key={index}
-                title={question.title}
-                imageSrc={question.imageSrc}
-              />
-            ))}
-          </div>
+          <FaqList/>
         </Container>
       </section>
-    </>
+    </ClientProvider>
   );
 }

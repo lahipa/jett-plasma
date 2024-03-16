@@ -17,7 +17,7 @@ const VideoList = () => {
                 <h4 className="text-[30px] lg:text-[50px] font-medium leading-[40px] lg:leading-[64px]">Check Out Our Exciting Videos on Jett plasma Applications</h4>
                 <div className="flex flex-col gap-[80px]">
                     <div className="flex items-stretch gap-[50px]">
-                        {data?.result.videos.data.map((item, index) => {
+                        {data?.result.videos.data.slice(0, 3).map((item, index) => {
                             return (
                                 <div key={index} className="flex-1">
                                     <VideoItemCard

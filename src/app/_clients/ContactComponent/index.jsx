@@ -3,19 +3,37 @@
 import React, { useState } from 'react';
 import Container from '@/app/_components/container';
 import { Button, TextInput, TextareaInput } from '@/app/_components/base';
+import { useMutation } from '@tanstack/react-query';
+import { postContact } from '@/api';
 
 const ContactComponent = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     email: '',
     phone: '',
     message: ''
   });
 
+  const { mutate } = useMutation({
+    mutationFn: (data) => postContact(data),
+    onSuccess: (data) => {
+      setFormData({
+        first_name: '',
+        last_name: '',
+        email: '',
+        phone: '',
+        message: ''
+      })
+    },
+    onError: (e) => {
+      console.log('error: ', e)
+    }
+  })
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
+    mutate(formData)
   };
 
   const handleInputChange = (event) => {
@@ -45,8 +63,8 @@ const ContactComponent = () => {
           </div>
           <form className='flex flex-col flex-1 justify-between items-start h-full w-full gap-3' onSubmit={handleSubmit}>
             <div className="grid grid-cols-2 gap-6 mt-[30px] w-full">
-              <TextInput label="First Name" placeholder="Enter first name" className="w-full" type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} />
-              <TextInput label="Last Name" placeholder="Enter last name" className="w-full" type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} />
+              <TextInput label="First Name" placeholder="Enter first name" className="w-full" type="text" name="first_name" value={formData.first_name} onChange={handleInputChange} />
+              <TextInput label="Last Name" placeholder="Enter last name" className="w-full" type="text" name="last_name" value={formData.last_name} onChange={handleInputChange} />
             </div>
             <TextInput label="Email Address" placeholder="Enter email address" className="w-full " type="text" name="email" value={formData.email} onChange={handleInputChange} />
             <TextInput label="Phone" placeholder="Enter phone" className="w-full" name="phone" value={formData.phone} onChange={handleInputChange} />

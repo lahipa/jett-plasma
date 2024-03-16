@@ -1,10 +1,17 @@
 "use client";
 
-import { useInfiniteQuery } from "@tanstack/react-query"
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query"
 import { getStudies } from '../api';
 import { useRef, useCallback} from 'react'
 
 export const useGetStudies = (request, apiKey) => {
+    return useQuery({
+        queryKey: ['studies', request],
+        queryFn: () => getStudies(request, apiKey),
+    })
+};
+
+export const useGetPaginateStudies = (request, apiKey) => {
     return useInfiniteQuery({
         queryKey: ["studies", request],
         queryFn: ({ pageParam = 1 }) =>
@@ -25,7 +32,7 @@ export const useGetStudiesFormatted = () => {
         isFetchingNextPage,
         hasNextPage,
         isRefetching,
-    } = useGetStudies({
+    } = useGetPaginateStudies({
         per_page: 6
     });
 
@@ -72,6 +79,8 @@ export const useGetStudiesFormatted = () => {
 
     return {
         data: list_data,
+        title: data?.pages[0].result.title,
+        description: data?.pages[0].result.description,
         isLoading,
         isFetchingNextPage,
         hasNextPage,

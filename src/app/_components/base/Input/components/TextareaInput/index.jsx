@@ -1,20 +1,36 @@
 import React from "react";
 import cx from "classnames";
+import { dataVariants, dataSizes } from "../../data";
 
 const TextareaInput = (props) => {
-  const { label, className, textareaClassName, ...rest } = props;
+  const { 
+    label = "Input Text", className, type = "text", placeholder = "Please input value here..", disabled, fullWidth,
+    size = "base", variant = "base", rows = 3,
+    ...rest
+  } = props;
+
+  const variants = disabled ? 'disabled' : variant;
 
   return (
-      <div className={cx('form-group flex flex-col gap-[10px] text-dark-10 text-base w-full', className)}>
-        {label && <label className="text-base font-semibold">{label}</label>}
-        <textarea
-          rows={3}
-          className={
-            cx("form-control bg-transparent  rounded-[10px] py-[14] px-4 w-full border border-neutral-100 focus:border-neutral-100 ring-0 focus:ring-0 shadow-none focus:outline-none focus:shadow-none", textareaClassName)
-          }
-          {...rest}
-        />
-      </div>
+    <div className={cx('relative flex flex-col gap-[10px]')}>
+      {label && <label className="text-[16px] leading-[24px] font-medium">{label}</label>}
+      <textarea
+        type={type}
+        disabled={disabled}
+        placeholder={placeholder}
+        rows={rows}
+        {...rest}
+        className={cx(
+          "relative focus:outline-none whitespace-nowrap mix-blend-darken placeholder:text-[#1C1E22]",
+          { 
+            "w-full": fullWidth,
+          },
+          dataVariants[variants],
+          dataSizes.textareaInput[size],
+          className,
+        )}
+      />
+    </div>
   );
 };
 

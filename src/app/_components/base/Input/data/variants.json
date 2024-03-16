@@ -1,9 +1,6 @@
 {
-    "default": "relative",
-    "primary": "relative",
+    "base": "relative bg-white border border-neutral-60 focus:ring-neutral-60/30",
+    "primary": "relative bg-white border border-[#1C1E22] focus:ring-[#1C1E22]/30",
     "secondary": "relative",
-    "warning": "relative",
-    "danger": "relative",
-    "success": "relative",
-    "disabled": ""
+    "disabled": "relative bg-neutral-30 border border-neutral-40 !focus:ring-0"
 }

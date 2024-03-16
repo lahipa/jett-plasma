@@ -1,0 +1,14 @@
+{
+    "textInput": {
+        "xs": "h-[28px] px-[14px] text-tiny focus:ring-1g rounded-[8px]",
+        "sm": "h-[32px] px-[14px] text-tiny focus:ring-2 rounded-[8px]",
+        "base": "h-[40px] px-[16px] text-base focus:ring-2 rounded-[10px]",
+        "lg": "h-[50px] px-[16px] text-base focus:ring-2 rounded-[10px]"
+    },
+    "textareaInput": {
+        "xs": "py-[14px] px-[14px] text-tiny focus:ring-1g rounded-[8px]",
+        "sm": "py-[14px] px-[14px] text-tiny focus:ring-2 rounded-[8px]",
+        "base": "py-[16px] px-[16px] text-base focus:ring-2 rounded-[10px]",
+        "lg": "py-[16px] px-[16px] text-base focus:ring-2 rounded-[10px]"
+    }
+}

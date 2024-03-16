@@ -1,14 +1,33 @@
 import React from "react";
 import cx from "classnames";
+import { dataVariants, dataSizes } from "../../data";
 
-const TextInput = ({ label, type, className, inputClassName, ...rest }) => {
+const TextInput = (props) => {
+  const { 
+    label = "Input Text", className, type = "text", placeholder = "Please input value here..", disabled, fullWidth,
+    size = "base", variant = "base",
+    ...rest
+  } = props;
+
+  const variants = disabled ? 'disabled' : variant;
+
   return (
-    <div className={cx('form-group flex flex-col gap-[10px] text-dark-10 text-base', className)}>
-      {label && <label className="text-base font-semibold" >{label}</label>}
+    <div className={cx('relative flex flex-col gap-[10px]')}>
+      {label && <label className="text-[16px] leading-[24px] font-medium">{label}</label>}
       <input
         type={type}
-        className={cx("form-control border border-neutral-100 bg-transparent  !outline-none rounded-[10px] py-[14] px-4 focus:border-neutral-100 ring-0 focus:ring-0 shadow-none focus:outline-none focus:shadow-none", inputClassName)}
+        disabled={disabled}
+        placeholder={placeholder}
         {...rest}
+        className={cx(
+          "relative focus:outline-none whitespace-nowrap mix-blend-darken placeholder:text-[#1C1E22]",
+          { 
+            "w-full": fullWidth,
+          },
+          dataVariants[variants],
+          dataSizes.textInput[size],
+          className,
+        )}
       />
     </div>
   );

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { BtnLearnMoreStudy } from '@/app/studies/_clients';
 
-const StudyItemCard = (props) => {
+const StudyItemCard = forwardRef((props, ref) => {
   const { cover, code, name, description } = props;
 
   return (
-    <div className="flex flex-col gap-[22px]">
+    <div ref={ref} className="flex flex-col gap-[22px]">
       <div className="relative bg-black overflow-hidden aspect-square rounded-[30px]">
         <img className="w-full h-full object-cover" src={cover} alt="img-treatments" />
       </div>
@@ -22,6 +22,6 @@ const StudyItemCard = (props) => {
       </div>
     </div>
   );
-};
+});
 
 export default StudyItemCard;

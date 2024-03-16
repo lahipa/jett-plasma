@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Icon } from '@/app/_components/base';
 
-const CardTestimony = ({ name, testimonial, time, image }) => {
+const CardTestimony = forwardRef(({ name, testimonial, time, image }, ref) => {
   return (
-    <div className='h-fit w-full bg-white rounded-[25px] p-[25px] flex flex-col gap-[20px]'>
+    <div key={ref} className='h-fit w-full bg-white rounded-[25px] p-[25px] flex flex-col gap-[20px]'>
       <div className='w-fit h-fit rotate-12'>
         <Icon icon="IconQuote" size={40} />
       </div>
@@ -19,6 +19,6 @@ const CardTestimony = ({ name, testimonial, time, image }) => {
       </div>
     </div>
   );
-};
+});
 
 export default CardTestimony;

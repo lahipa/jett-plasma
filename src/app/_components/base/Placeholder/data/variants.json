@@ -1,0 +1,6 @@
+{
+    "base": "bg-slate-400",
+    "disabled": "bg-slate-300",
+    "primary": "bg-[#1C1E22]/50",
+    "secondary": ""
+}

@@ -12,6 +12,8 @@ import { studiesData, Question, Treatments } from "@/app/_data";
 export default function Studies() {
   return (
     <ClientProvider>
+      <div className="h-[70px] lg:hidden" />
+
       <StudyList/>
 
       <VideoList/>
@@ -25,7 +27,8 @@ export default function Studies() {
               Can’t find what you’re looking for? Contact us here: <br /> <a href="/" className="text-primary underline">info@jettplasmaeye.com</a>
             </p>
           </div>
-          <FaqList/>
+
+          <FaqList />
         </Container>
       </section>
     </ClientProvider>

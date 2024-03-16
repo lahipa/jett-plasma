@@ -2,9 +2,7 @@ import { Fragment } from "react";
 import Container from "@/app/_components/container";
 import { Badge } from "@/app/_components/base";
 import { ClientProvider } from "@/app/_clients";
-import { VideoItemCard } from "@/app/videos/_components";
-import { StudyItemCard } from "@/app/studies/_components";
-import { BtnSeeMoreVideos, FaqList, StudyList, VideoList } from "@/app/studies/_clients";
+import { FaqList, StudyList, VideoList } from "@/app/studies/_clients";
 
 // data
 import { studiesData, Question, Treatments } from "@/app/_data";

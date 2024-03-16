@@ -19,7 +19,7 @@ const HomeSectionOne = () => {
   return (
     <section ref={ref} id="hero" className="relative h-[960px] lg:h-[870px] lg:-mt-[120px] lg:pt-[120px] overflow-hidden lg:overflow-visible">
       <Container className="flex flex-col h-full">
-        <div id="pattern-1" className="absolute top-[210px] lg:-top-[120px] -right-[10px] lg:-right-[50px] z-[41]">
+        <div id="pattern-1" className="absolute top-[210px] lg:-top-[120px] -right-[10px] lg:-right-[50px] z-[20]">
           <img src="/layouts/pattern-01.svg" alt="pattern-01" className="w-[175px] lg:w-[366px] h-[121px] lg:h-[253px]" />
         </div>
         

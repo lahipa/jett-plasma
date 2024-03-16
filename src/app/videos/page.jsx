@@ -1,13 +1,8 @@
 import Container from "@/app/_components/container";
 import { Badge } from "@/app/_components/base";
 import { ClientProvider, CtaLayoutContact } from "@/app/_clients";
-import { VideoItemCard, StudyLatestCard } from "@/app/videos/_components";
-import { BtnHeroBanner, BtnSeeMoreStudies, StudyList, VideoList } from "@/app/videos/_clients";
-import { CardQuestion } from "@/app/_components/cards";
-
-// data
-import { Products, Question, Treatments } from "@/app/_data";
-import { FaqList } from "../studies/_clients";
+import { StudyList, VideoList } from "@/app/videos/_clients";
+import { FaqList } from "@/app/studies/_clients";
 // import { limitContentText } from "@/utils/globals";
 
 export default function Videos() {

@@ -1,12 +1,112 @@
 [
-    "Liquefaction of meibum gland",
-    "Depolarization of the cell membrane allowing metabolic upregulation and reorganization of ions within the cells to regain electrical stability",
-    "Reduction of bacterial flora",
-    "Micro-thrombosis of telangectatic vessels",
-    "Biostimulation of collagen and elastin production (aesthetics)",
-    "Improved blood perfusion",
-    "Thermal stimulation",
-    "Increased vascularization of mucosal tissue",
-    "Astringent effect on Meibomian Glands",
-    "Improved elasticity of tissues"
+    {
+        "text": "Liquefaction of meibum gland",
+        "x": {
+            "input": [0, 1],
+            "output": [-200, 0]
+        },
+        "y": {
+            "input": [0, 1],
+            "output": [0, 0]
+        }
+    },
+    {
+        "text": "Depolarization of the cell membrane allowing metabolic upregulation and reorganization of ions within the cells to regain electrical stability",
+        "x": {
+            "input": [0, 1],
+            "output": [0, 0]
+        },
+        "y": {
+            "input": [0, 1],
+            "output": [0, 0]
+        }
+    },
+    {
+        "text": "Reduction of bacterial flora",
+        "x": {
+            "input": [0, 1],
+            "output": [200, 0]
+        },
+        "y": {
+            "input": [0, 1],
+            "output": [200, 0]
+        }
+    },
+    {
+        "text": "Micro-thrombosis of telangectatic vessels",
+        "x": {
+            "input": [0, 1],
+            "output": [-200, 0]
+        },
+        "y": {
+            "input": [0, 1],
+            "output": [200, 0]
+        }
+    },
+    {
+        "text": "Biostimulation of collagen and elastin production (aesthetics)",
+        "x": {
+            "input": [0, 1],
+            "output": [0, 0]
+        },
+        "y": {
+            "input": [0, 1],
+            "output": [200, 0]
+        }
+    },
+    {
+        "text": "Improved blood perfusion",
+        "x": {
+            "input": [0, 1],
+            "output": [200, 0]
+        },
+        "y": {
+            "input": [0, 1],
+            "output": [300, 0]
+        }
+    },
+    {
+        "text": "Thermal stimulation",
+        "x": {
+            "input": [0, 1],
+            "output": [0, 0]
+        },
+        "y": {
+            "input": [0, 1],
+            "output": [300, 0]
+        }
+    },
+    {
+        "text": "Increased vascularization of mucosal tissue",
+        "x": {
+            "input": [0, 1],
+            "output": [0, 0]
+        },
+        "y": {
+            "input": [0, 1],
+            "output": [300, 0]
+        }
+    },
+    {
+        "text": "Astringent effect on Meibomian Glands",
+        "x": {
+            "input": [0, 1],
+            "output": [0, 0]
+        },
+        "y": {
+            "input": [0, 1],
+            "output": [300, 0]
+        }
+    },
+    {
+        "text": "Improved elasticity of tissues",
+        "x": {
+            "input": [0, 1],
+            "output": [0, 0]
+        },
+        "y": {
+            "input": [0, 1],
+            "output": [500, 0]
+        }
+    }
 ]

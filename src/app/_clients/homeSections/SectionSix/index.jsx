@@ -1,11 +1,11 @@
 "use client"
 import Container from '@/app/_components/container';
 import { motion, useAnimation, useTransform, useSpring, useScroll} from 'framer-motion';
-import { useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
+import { useEffect, useRef } from 'react';
+import Item from './Item';
 
 const SectionSix = ({ jettPlasmaPsycologyEffect }) => {
-  const { ref, inView } = useInView();
+  const ref = useRef();
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -19,10 +19,6 @@ const SectionSix = ({ jettPlasmaPsycologyEffect }) => {
 
   const controls = useAnimation();
 
-
-  const elementB = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]); 
-
-
   useEffect(() => {
     controls.start("visible");
   }, [controls]);
@@ -32,7 +28,7 @@ const SectionSix = ({ jettPlasmaPsycologyEffect }) => {
       <Container className="flex flex-col gap-[30px] lg:gap-[80px]">
         <h4 className="text-[30px] lg:text-[50px] font-medium leading-[40px] lg:leading-[64px] lg:text-center">Physiological and Therapeutic <br /> Effects of Jett Plasma Pen</h4>
         <div className="flex flex-col lg:flex-row flex-wrap lg:items-end lg:justify-center gap-[10px] lg:gap-[20px]">
-          {jettPlasmaPsycologyEffect.map((effect, x) => (
+          {/* {jettPlasmaPsycologyEffect.map((effect, x) => (
             <motion.div
               key={x.toString()}
               // ref={ref}
@@ -46,6 +42,14 @@ const SectionSix = ({ jettPlasmaPsycologyEffect }) => {
                 <p className="leading-[28px] text-white flex-1">{effect}</p>
               </div>
             </motion.div>
+          ))} */}
+          {jettPlasmaPsycologyEffect.map((effect, x) => (
+            <Item
+              key={x}
+              data={effect}
+              index={x}
+              scrollYProgress={scrollYProgress}
+            />
           ))}
         </div>
 

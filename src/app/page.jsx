@@ -8,7 +8,7 @@ import { CardQuestion } from "@/app/_components/cards";
 // data
 import { jettPlasmaPenResult, jettPlasmaPsycologyEffect, Question } from '@/app/_data';
 import SectionFive from "./@clients/homeSections/SectionFive";
-import SectionSix from "./_clients/homeSections/SectionFive/SectionSix";
+import SectionSix from "./_clients/homeSections/SectionSix";
 import { SectionFour } from "./_clients/homeSections/SectionFour";
 import SectionSeven from "./_clients/homeSections/SectionSeven";
 import SectionEight from "./_clients/homeSections/SectionEight";

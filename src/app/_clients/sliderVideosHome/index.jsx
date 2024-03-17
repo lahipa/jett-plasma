@@ -36,14 +36,14 @@ const SliderVideosHome = () => {
     damping: 40,
   });
 
-  const textXTransform = useTransform(scrollYProgressSpring, [0, 1], ["0", "-100%"]);
-  const textY3Transform = useTransform(scrollYProgressSpring, [0, 1], [100, 0]);
-  const imgX1Transform = useTransform(scrollYProgressSpring, [1, 0], [-1200, 0]);
+  const imgTransform = useTransform(scrollYProgressSpring, [0, 1], [2,  1.3])
+  const element1= useTransform(scrollYProgressSpring, [1, 0], [-230, 0]);
 
   return (
     <div className="relative" ref={refSwiper} >
       <Swiper
         slidesPerView={1.2}
+        loop={true}
         spaceBetween={10}
         freeMode={true}
         modules={[FreeMode]}
@@ -56,11 +56,11 @@ const SliderVideosHome = () => {
         }}
         ref={refSwiper}
       >
-        <motion.div style={{ x: imgX1Transform }}>
+        <div>
           {Treatments.map((treatment, index) => (
             <SwiperSlide key={index.toString()}>
-              <div className="relative rounded-2xl lg:w-full h-[168px] lg:h-[500px] overflow-hidden">
-                <img className="w-full h-full object-cover" src={treatment.imageSrc} alt="" />
+              <motion.div style={{ x: element1 }} className="relative rounded-2xl lg:w-full h-[168px] lg:h-[500px] overflow-hidden">
+                <motion.img style={{ scale: imgTransform}} className="w-full h-full object-cover" src={treatment.imageSrc} alt="" />
                 <div className="absolute bottom-0 w-full p-[1rem] flex items-center lg:justify-between gap-[10px]">
                   <button className="hidden pl-[6px] py-[6px] pr-[24px] lg:flex align-center items-center gap-[14px] border border-white bg-[#1C1E22]/20 rounded-full">
                     <div className="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] flex items-center justify-center bg-[#1C1E22]/20 border border-white rounded-full">
@@ -75,10 +75,10 @@ const SliderVideosHome = () => {
                     <Icon icon="IconDownload" size={20} color="text-white" />
                   </button>
                 </div>
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
-        </motion.div>
+        </div>
         <SliderVideosHomeBar />
       </Swiper>
     </div>

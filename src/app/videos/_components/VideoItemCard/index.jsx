@@ -1,8 +1,9 @@
 import React, { forwardRef } from 'react';
 import { BtnVideoItemCard } from "@/app/videos/_clients";
+import Link from 'next/link';
 
 const VideoItemCard = forwardRef((props, ref) => {
-  const { slug, cover, title, duration = "10:12" } = props;
+  const { slug, cover, title, duration } = props;
     
   return (
     <div key={ref} className="flex flex-col gap-[22px]">
@@ -12,7 +13,9 @@ const VideoItemCard = forwardRef((props, ref) => {
         <BtnVideoItemCard duration={duration} slug={slug} />
       </div>
 
-      <p className="text-[20px] lg:text-[24px] leading-[30px] lg:leading-[34px]">{title}</p>
+      <Link href={`/videos/${slug}`}>
+        <span className="text-[20px] lg:text-[24px] leading-[30px] lg:leading-[34px]">{title}</span>
+      </Link>
     </div>
   );
 });

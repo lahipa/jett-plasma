@@ -39,7 +39,7 @@ const HomeSectionOne = () => {
           </div>
         </motion.div>
 
-        <div id="leading-product" className="flex flex-col h-full mix-blend-darken relative" style={{ y: elementA }}>
+        <motion.div id="leading-product" className="flex flex-col h-full mix-blend-darken relative" style={{ y: elementA }}>
           <div className="relative lg:absolute w-[588px] lg:w-[1004px] h-[224px] lg:h-[382px] -top-[30px] lg:-top-[180px] lg:right-0">
             {/* img should be replace using image component */}
             <img src="/products/product-1.png" alt="product-1" className="w-full h-full" />
@@ -57,7 +57,7 @@ const HomeSectionOne = () => {
               <p className="text-[16px] lg:text-[18px] leading-[24px] lg:leading-[28px]">A groundbreaking treatment for MGD, Blepharitis, Demodex, Chalazion, Trichiasis, Entropion, Ectropion, and Xanthelasma. Discover a breakthrough method to perform non-surgical Blepharoplasty, reduce fine lines and wrinkles, and remove benign vascular and skin lesions.</p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </Container>
 
       <div id="pattern-1" className="absolute -bottom-[55px] lg:-bottom-[150px] left-0 z-[1]">

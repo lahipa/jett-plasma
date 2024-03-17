@@ -68,7 +68,7 @@ function VideoList() {
                                     ref={index === data.length - 1 ? lastElementRef : undefined}
                                     key={index} 
                                     {...item}
-                                    duration="10.12" 
+                                    // duration="10.12" 
                                 />
                             );
                         })}

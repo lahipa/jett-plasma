@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import { BtnLearnMoreStudy } from '@/app/studies/_clients';
 
 const StudyItemCard = forwardRef((props, ref) => {
-  const { cover, code, name, description } = props;
+  const { slug, cover, code, name, description } = props;
 
   return (
     <div ref={ref} className="flex flex-col gap-[22px]">
@@ -17,7 +17,7 @@ const StudyItemCard = forwardRef((props, ref) => {
             <p className="text-[16px] leading-[24px]">{description}</p>
           </div>
 
-          <BtnLearnMoreStudy />
+          <BtnLearnMoreStudy slug={slug} />
         </div>
       </div>
     </div>

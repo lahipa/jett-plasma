@@ -10,7 +10,7 @@ import { SquarePlaceholder } from "@/app/_components/base";
 
 const StudyList = () => {
 
-    const { isLoading, data } = useGetStudies()
+    const { isLoading, data } = useGetStudies({ locale_code: "en" });
 
     return (
         <section className="relative py-[80px] lg:py-[100px] bg-black text-white rounded-[40px] lg:rounded-[80px] z-[1]">
@@ -36,7 +36,7 @@ const StudyList = () => {
                                 <div key={index} className="flex-1">
                                     <StudyLatestCard
                                         cover={product.thumbnail}
-                                        code={"26.2-TF-JPM II"}
+                                        code={product.posts_code}
                                         name={product.posts_title}
                                         description={product.posts_description}
                                     />

@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery, useInfiniteQuery } from "@tanstack/react-query"
-import { getVideos } from '../api';
+import { getVideos, getDetailVideos } from '../api';
 import { useCallback, useRef } from "react";
 
 export const useGetVideos = (request, apiKey) => {
@@ -11,11 +11,17 @@ export const useGetVideos = (request, apiKey) => {
     })
 };
 
+export const useGetDetailVideos = (slug, apiKey) => {
+    return useQuery({
+        queryKey: ['videos-detail', slug],
+        queryFn: () => getDetailVideos(slug),
+    })
+};
+
 export const useGetPaginateVideos = (request, apiKey) => {
     return useInfiniteQuery({
         queryKey: ["videos", request],
-        queryFn: ({ pageParam = 1 }) =>
-        getVideos({ ...request, page: pageParam }),
+        queryFn: ({ pageParam = 1 }) => getVideos({ ...request, page: pageParam }),
         getNextPageParam: (lastPage) => {
             const currentPage = lastPage?.result?.videos.current_page;
             const lastPageNumber = lastPage?.result?.videos.last_page;
@@ -24,7 +30,7 @@ export const useGetPaginateVideos = (request, apiKey) => {
     });
 };
 
-export const useGetVideosFormatted = () => {
+export const useGetVideosFormatted = (lang) => {
     const {
         data,
         isLoading,
@@ -33,7 +39,7 @@ export const useGetVideosFormatted = () => {
         hasNextPage,
         isRefetching,
     } = useGetPaginateVideos({
-        per_page: 6
+        per_page: 6, locale_code: lang || "en",
     });
 
     const observer = useRef(null);
@@ -72,7 +78,8 @@ export const useGetVideosFormatted = () => {
                 title: item.posts_title,
                 slug: item.posts_slug,
                 cover: item.thumbnail,
-                code: "26.2-TF-JPM II"
+                code: item.posts_code,
+                duration: item.posts_misc,
             })
         })
     })

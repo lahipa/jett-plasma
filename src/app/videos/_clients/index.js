@@ -4,5 +4,14 @@ import BtnVideoItemCard from "./BtnVideoItemCard";
 import ShowedVideoModal from "./ShowedVideoModal";
 import VideoList from "./VideoList";
 import StudyList from "./StudyList";
+import ContentVideoDynamic from "./ContentVideoDynamic";
 
-export { BtnHeroBanner, BtnSeeMoreStudies, BtnVideoItemCard, ShowedVideoModal, VideoList, StudyList };
+export {
+  BtnHeroBanner,
+  BtnSeeMoreStudies,
+  BtnVideoItemCard,
+  ShowedVideoModal,
+  VideoList,
+  StudyList,
+  ContentVideoDynamic,
+};

@@ -1,18 +1,16 @@
 import Container from "@/app/_components/container";
+import { ClientProvider } from "@/app/_clients"
+import { ContentStudiesDynamic } from "@/app/studies/_clients";
 
-export default function StudiesDetail() {
+export default function StudiesDetail(props) {
+  const { params } = props;
+  
   return (
-    <>
-      <section>
-        <Container>
-          <p>Hero</p>
-        </Container>
-      </section>
-      <section>
-        <Container>
-          <p>Studies Detail</p>
-        </Container>
-      </section>
-    </>
+    <ClientProvider>
+      <div className="h-[70px] lg:hidden" />
+      <ContentStudiesDynamic category="studies" slug={params.slugs} />
+
+      <div className="h-[50px] lg:h-[100px]" />
+    </ClientProvider>
   );
 }

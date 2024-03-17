@@ -7,3 +7,9 @@ export const getStudies = async (params, apiKey) => {
 
     return data;
 };
+
+export const getDetailStudies = async (slug, apiKey) => {
+    const { data } = await axios.get(`https://jet-plasma.testdev.my.id/api/v1/studies/${slug}`);
+
+    return data;
+};

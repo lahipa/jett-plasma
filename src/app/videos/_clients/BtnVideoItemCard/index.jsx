@@ -38,15 +38,19 @@ const BtnVideoItemCard = ({ slug, duration }) => {
                     </span>
                 </div>
 
-                <IconButton
+                {/* <IconButton
                     variant="white"
                     icon="IconDownload"
                     className="bg-[#1C1E22]/20"
                     outline
-                />
+                /> */}
             </div>
 
-            <ShowedVideoModal show={open} onClose={onClickClose} />
+            <ShowedVideoModal
+                show={open}
+                onClose={onClickClose}
+                slug={slug}
+            />
         </>
     );
 }

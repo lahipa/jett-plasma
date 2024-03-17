@@ -1,7 +1,7 @@
 "use client";
 
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query"
-import { getStudies } from '../api';
+import { getStudies, getDetailStudies } from '../api';
 import { useRef, useCallback} from 'react'
 
 export const useGetStudies = (request, apiKey) => {
@@ -11,11 +11,17 @@ export const useGetStudies = (request, apiKey) => {
     })
 };
 
+export const useGetDetailStudies = (slug, apiKey) => {
+    return useQuery({
+        queryKey: ['studies-detail', slug],
+        queryFn: () => getDetailStudies(slug, apiKey),
+    })
+};
+
 export const useGetPaginateStudies = (request, apiKey) => {
     return useInfiniteQuery({
         queryKey: ["studies", request],
-        queryFn: ({ pageParam = 1 }) =>
-        getStudies({ ...request, page: pageParam }),
+        queryFn: ({ pageParam = 1 }) => getStudies({ ...request, page: pageParam }),
         getNextPageParam: (lastPage) => {
             const currentPage = lastPage?.result?.studies.current_page;
             const lastPageNumber = lastPage?.result?.studies.last_page;
@@ -24,7 +30,7 @@ export const useGetPaginateStudies = (request, apiKey) => {
     });
 };
 
-export const useGetStudiesFormatted = () => {
+export const useGetStudiesFormatted = (lang) => {
     const {
         data,
         isLoading,
@@ -33,7 +39,7 @@ export const useGetStudiesFormatted = () => {
         hasNextPage,
         isRefetching,
     } = useGetPaginateStudies({
-        per_page: 6
+        per_page: 6, locale_code: lang || "en",
     });
 
     const observer = useRef(null);
@@ -70,9 +76,10 @@ export const useGetStudiesFormatted = () => {
         pageData.result.studies.data.map((item) => {
             list_data.push({
                 name: item.posts_title,
+                slug: item.posts_slug,
                 description: item.posts_description,
                 cover: item.thumbnail,
-                code: "26.2-TF-JPM II"
+                code: item.posts_code,
             })
         })
     })

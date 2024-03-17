@@ -27,29 +27,8 @@ export default function Home() {
      <SectionFour />
 
      <SectionFive />
+
      <SectionSix  jettPlasmaPsycologyEffect={jettPlasmaPsycologyEffect} />
-
-      {/* <section className="relative pt-[80px] lg:pt-[150px] pb-[0]">
-        <Container className="flex flex-col gap-[30px] lg:gap-[80px]">
-          <h4 className="text-[30px] lg:text-[50px] font-medium leading-[40px] lg:leading-[64px] lg:text-center">Physiological and Therapeutic <br /> Effects of Jett Plasma Pen</h4>
-          <div className="flex flex-col lg:flex-row flex-wrap lg:items-end lg:justify-center gap-[10px] lg:gap-[20px]">
-            {jettPlasmaPsycologyEffect.map((effect, x) => {
-              return (
-                <div key={x.toString()} className="relative px-[20px] py-[16px] max-w-[400px] bg-black rounded-[25px]">
-                  <div className="flex items-start gap-[8px]">
-                      <div className="w-[6px] h-[6px] rounded-full bg-white mt-[12px]" />
-                      <p className="leading-[28px] text-white flex-1">{effect}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          <div id="pattern-1" className="absolute -top-[80px] lg:-top-[150px] right-[16px] lg:-right-[20px] z-[1]">
-            <img src="/layouts/pattern-04.svg" alt="pattern-04" className="w-[95px] lg:w-[354px] h-[102px] lg:h-[380px]" />
-          </div>
-        </Container>
-      </section> */}
 
      <SectionSeven />
 

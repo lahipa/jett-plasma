@@ -7,7 +7,7 @@ import SectionSeven from "./_clients/homeSections/SectionSeven";
 import SectionEight from "./_clients/homeSections/SectionEight";
 import SectionTen from "./_clients/homeSections/SectionTen";
 import SectionEleven from "./_clients/homeSections/SectionEleven";
-import { HomeSectionFive, HomeSectionFour, HomeSectionOne, HomeSectionSeven, HomeSectionSix, HomeSectionThree, HomeSectionTwo, SliderVideosHome } from "./_clients";
+import { HomeSectionEight, HomeSectionFive, HomeSectionFour, HomeSectionOne, HomeSectionSeven, HomeSectionSix, HomeSectionThree, HomeSectionTwo, SliderVideosHome } from "./_clients";
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
       <HomeSectionFive />
       <HomeSectionSix jettPlasmaPsycologyEffect={jettPlasmaPsycologyEffect} />
       <HomeSectionSeven />
-      <SectionEight />
+      <HomeSectionEight />
 
       <section className="relative bg-background pt-[80px] lg:pt-[150px] pb-[0] z-[2] flex flex-col gap-[30px] lg:gap-[80px]">
         <Container className="">

@@ -15,7 +15,6 @@ const HomeSectionTwo = () => {
 
   const elementA = useTransform(scrollYProgress, [0, 1], ["-40", "100%"]);
   const elementB = useTransform(scrollYProgress, [0, 1], [-100, 120]);
-  const elementCX = useTransform(scrollYProgressSpring, [0, 1], ["-10%", "15%"]);
 
   return (
     <section

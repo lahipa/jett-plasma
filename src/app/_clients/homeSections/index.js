@@ -5,7 +5,7 @@ import HomeSectionFour from "./SectionFour";
 import HomeSectionFive from "./SectionFive";
 import HomeSectionSix from "./SectionSix";
 import HomeSectionSeven from "./SectionSeven";
-import HomeSectionEight from "./SectionSeven";
+import HomeSectionEight from "./SectionEight";
 import HomeSectionTen from "./SectionTen"
 
 export { 

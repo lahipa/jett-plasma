@@ -19,7 +19,6 @@ const SectionEight = () => {
   const imgTransform = useTransform(scrollYProgressSpring, [0, 1], ["20%", "-40%"])
   const text2XTransform = useTransform(scrollYProgressSpring, [0, 1], ["-20%", "0%"])
 
-
   return (
     <section ref={ref} className="relative py-[80px] lg:py-[100px] bg-black text-white rounded-[40px] lg:rounded-[80px] z-[1] ">
     <Container className="flex flex-col lg:flex-row-reverse items-stretch gap-[420px] lg:gap-[100px]">

@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import { IconButton } from "@/app/_components/base";
+import { ContentVideoDynamic } from "@/app/videos/_clients";
 
-const ShowedVideoModal = ({ show, onClose, data }) => {
+const ShowedVideoModal = ({ show, onClose, slug }) => {
 
   const dialogRef = useRef(null);
 
@@ -22,17 +24,27 @@ const ShowedVideoModal = ({ show, onClose, data }) => {
       document.body.style.overflow = "visible";
     }
   }, [dialogRef, show, onClose]);
-
+  
   if (!show) return null;
 
   return (
     <div className="fixed inset-0 flex justify-start z-[500] backdrop-filter backdrop-blur-md">
-      <div className="w-full h-screen overflow-x-auto">
+      <div className="relative w-full h-screen overflow-x-auto">
         <h4 className="hidden">Modal</h4>
+        <div className="fixed top-[30px] right-[40px]">
+          <IconButton
+            variant="black"
+            icon="IconSquareRoundedX"
+            // outline
+            size="lg"
+          />
+        </div>
 
         <div ref={dialogRef} className="w-full max-w-screen-xl relative flex flex-col md:ml-10">
           <div className="relative min-h-screen bg-background p-[30px] shadow-xl">
-            <p>Container</p>
+            
+            <ContentVideoDynamic category="video" slug={slug} />
+
           </div>
         </div>
       </div>

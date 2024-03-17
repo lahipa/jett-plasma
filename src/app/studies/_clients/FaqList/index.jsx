@@ -7,7 +7,7 @@ import { SquarePlaceholder } from "@/app/_components/base";
 
 const FaqList = () => {
 
-    const { isLoading, data } = useGetFaqs()
+    const { isLoading, data } = useGetFaqs({ locale_code: "en" });
     
     return (
         <div className="flex-1 flex flex-col">

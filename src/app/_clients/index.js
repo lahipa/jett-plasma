@@ -18,5 +18,5 @@ export {
     SliderVideosHome,
     BeforeAfterImage,
     ContactComponent,
-    ClientProvider
+    ClientProvider,
 };

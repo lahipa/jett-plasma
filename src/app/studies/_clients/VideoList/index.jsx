@@ -9,8 +9,7 @@ import Container from '@/app/_components/container';
 import { SquarePlaceholder } from "@/app/_components/base";
 
 const VideoList = () => {
-
-    const { isLoading, data } = useGetVideos()
+    const { isLoading, data } = useGetVideos({ locale_code: "en" });
 
     return (
         <section className="relative py-[80px] lg:py-[100px] bg-black text-white rounded-[40px] lg:rounded-[80px] z-[1]">
@@ -39,7 +38,7 @@ const VideoList = () => {
                                         cover={item.thumbnail}
                                         title={item.posts_title}
                                         slug={item.posts_slug}
-                                        duration="10.12"
+                                        duration={item.posts_misc}
                                     />
                                 </div>
                             );

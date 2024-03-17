@@ -6,6 +6,7 @@ import LangSelector from "./langSelector";
 import SliderVideosHome from "./sliderVideosHome";
 import BeforeAfterImage from "./beforeAfterImage";
 import ContactComponent from "./ContactComponent";
+import ClientProvider from "./ClientProvider";
 
 export * from "./homeSections";
 export {
@@ -16,5 +17,6 @@ export {
     LangSelector,
     SliderVideosHome,
     BeforeAfterImage,
-    ContactComponent
+    ContactComponent,
+    ClientProvider
 };

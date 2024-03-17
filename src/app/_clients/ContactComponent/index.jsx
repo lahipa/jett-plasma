@@ -2,20 +2,38 @@
 
 import React, { useState } from 'react';
 import Container from '@/app/_components/container';
-import { Button, TextInput, TextareaInput } from '@/app/_components/base';
+import { Button, Badge, TextInput, TextareaInput } from '@/app/_components/base';
+import { useMutation } from '@tanstack/react-query';
+import { postContact } from '@/api';
 
 const ContactComponent = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     email: '',
     phone: '',
     message: ''
   });
 
+  const { mutate } = useMutation({
+    mutationFn: (data) => postContact(data),
+    onSuccess: (data) => {
+      setFormData({
+        first_name: '',
+        last_name: '',
+        email: '',
+        phone: '',
+        message: ''
+      })
+    },
+    onError: (e) => {
+      console.log('error: ', e)
+    }
+  })
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
+    mutate(formData)
   };
 
   const handleInputChange = (event) => {
@@ -27,47 +45,78 @@ const ContactComponent = () => {
   };
 
   return (
-    <Container>
-      <div className="flex justify-between gap-6 overflow-hidden items-end md:h-[750px] h-full">
-        <div className="flex flex-col flex-1 justify-between items-start h-full w-full">
-          <div>
-            <Button
-              title="Contact Us"
-              outline
-              className="w-[136px]"
-            />
-            <div className="text-[70px] font-bold">
-              Let’s get in touch!
+    <>
+      <div className="h-[70px] lg:hidden" />
+
+      <section className="relative pt-[40px] pb-[150px]">
+        <Container className="flex flex-col lg:flex-row-reverse lg:items-stretch gap-[45px] lg:gap-[90px]">
+          <div className="w-full md:w-fit hidden md:flex items-center justify-center">
+            <img src="/brand/jett_emblem_color_basic.png" className="w-[200px] h-[200px] md:w-[360px] md:h-[360px] lg:w-[550px] lg:h-[550px]" />
+          </div>
+          <div className="flex flex-col flex-1 gap-[30px]">
+            <div className="relative flex flex-col items-start gap-[14px]">
+              <Badge title="Contact Us" outline />
+              <h4 className="text-[40px] lg:text-[70px] leading-[50px] lg:leading-[88px] font-medium">Let’s get in touch!</h4>
+              <p className="text-[16px] lg:text-[20px] leading-[24px] lg:leading-[30px]">Have questions? We’re here to help. Send us a message and we’ll respond within 24 hours.</p>
             </div>
-            <div className="text-[20px]">
-              Have questions? We’re here to help. Send us a message and we’ll respond within 24 hours.
+            <div className="relative flex flex-col gap-[24px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-[24px]">
+                <TextInput
+                  label="First Name"
+                  name="first_name" 
+                  placeholder="Enter first name"
+                  variant="primary"
+                  size="lg"
+                  fullWidth
+                />
+                <TextInput
+                  label="Last Name"
+                  name="last_name" 
+                  placeholder="Enter last name"
+                  variant="primary"
+                  size="lg"
+                  fullWidth
+                />
+              </div>
+              <TextInput
+                label="Email Address" 
+                name="email"
+                placeholder="Enter email address"
+                variant="primary"
+                size="lg"
+                fullWidth
+              />
+              <TextInput
+                label="Phone" 
+                name="phone"
+                placeholder="Enter phone number"
+                variant="primary"
+                size="lg"
+                fullWidth
+              />
+              <TextareaInput
+                label="Message"
+                name="message"
+                placeholder="What you want to ask?"
+                variant="primary"
+                size="lg"
+                fullWidth
+              />
+            </div>
+            <div className="relative">
+              <Button
+                title="Send"
+                variant="black"
+                // type="submit"
+                icon="IconArrowRight"
+                iconPosition="right"
+                size="lg"
+              />
             </div>
           </div>
-          <form className='flex flex-col flex-1 justify-between items-start h-full w-full gap-3' onSubmit={handleSubmit}>
-            <div className="grid grid-cols-2 gap-6 mt-[30px] w-full">
-              <TextInput label="First Name" placeholder="Enter first name" className="w-full" type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} />
-              <TextInput label="Last Name" placeholder="Enter last name" className="w-full" type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} />
-            </div>
-            <TextInput label="Email Address" placeholder="Enter email address" className="w-full " type="text" name="email" value={formData.email} onChange={handleInputChange} />
-            <TextInput label="Phone" placeholder="Enter phone" className="w-full" name="phone" value={formData.phone} onChange={handleInputChange} />
-            <TextareaInput label="Message" placeholder="What you want to ask?" className="w-full" type="text" name="message" value={formData.message} onChange={handleInputChange} />
-
-            <Button
-              title="Send"
-              className="w-[136px] !bg-dark-10"
-              type="submit"
-              icon="IconArrowRight"
-              iconPosition="right"
-              size="lg"
-            />
-
-          </form>
-        </div>
-        <div className='w-1/3 hidden md:block h-full' >
-          <img className="h-full object-contain" src="/products/product-13.png" alt="" />
-        </div>
-      </div>
-    </Container>
+        </Container>
+      </section>
+    </>
   );
 };
 

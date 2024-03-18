@@ -80,10 +80,10 @@ const ContentVideoDynamic = (props) => {
             {!isLoading && data.result && data.result.sections.map((section, x) => {
                 return (
                     <section key={x.toString()} className="relative py-[50px]">
-                        <div className="relative w-full lg:max-w-[1024px] mx-auto px-[16px] lg:px-0">
+                        <div className="relative w-full lg:max-w-[1024px] mx-auto px-[16px] lg:px-0 flex items-stretch gap-[30px]">
                             {columns[section.pcs_identifier].map((column, i) => {
                                 return (
-                                    <div key={i.toString()} className="flex flex-col gap-[30px]" style={{ width: column }}>
+                                    <div key={i.toString()} className="flex flex-col gap-[30px] justify-center" style={{ width: column }}>
                                         {section.columns[i].elements.map((element, y) => {
                                             const block = element.pce_element_type;
                                             const content = element.pcc_element_contents;
@@ -122,15 +122,15 @@ const ContentVideoDynamic = (props) => {
 
                                             if (block === "image") {
                                                 return (
-                                                    <div key={y} className='w-full h-full max-h-[650px] relative'>
-                                                        <img src={content.imageSource[0].url} className='w-full h-full object-cover' />
+                                                    <div key={y} className='w-full h-full max-h-[520px] overflow-hidden rounded-[20px] lg:rounded-[30px]'>
+                                                        <img src={element.assets[0].url} className='w-full h-full object-cover' />
                                                     </div>
                                                 );
                                             }
 
                                             if (block === 'gallery') {
                                                 return (
-                                                    <div key={y} className=''>
+                                                    <div key={y} id="carousel-slides" className='overflow-hidden rounded-[20px] lg:rounded-[30px]'>
                                                         <Swiper
                                                             // spaceBetween={30}
                                                             slidesPerView={1}
@@ -145,7 +145,7 @@ const ContentVideoDynamic = (props) => {
                                                                     <SwiperSlide
                                                                         key={`${i+1}-id:swiper-slider`}
                                                                     >
-                                                                        <div className="relative w-full h-[486px] xl:h-[650px]">
+                                                                        <div className="relative w-full h-[486px] xl:h-[520px]">
                                                                             {item.mime.split("/")[0] === "video" && (
                                                                                 <video
                                                                                     disablePictureInPicture

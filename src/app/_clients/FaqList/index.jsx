@@ -8,8 +8,6 @@ import { SquarePlaceholder } from "@/app/_components/base";
 const FaqList = () => {
     const [expanded, setExpanded] = useState(null);
     const { isLoading, data } = useGetFaqs({ locale_code: "en" });
-
-    console.log(data)
     
     return (
         <div className="flex-1 flex flex-col">

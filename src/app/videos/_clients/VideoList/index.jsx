@@ -45,7 +45,7 @@ function VideoList() {
                 </div>
             </section>
 
-            <section className="relative pt-[100px] pb-[150px]">
+            <section className="relative pt-[50px] pb-[100px] lg:pt-[100px] lg:pb-[150px]">
                 <Container className="flex flex-col gap-[50px] lg:gap-[80px]">
                     <div className="grid  md:grid-cols-2 lg:grid-cols-3 gap-x-[30px] lg:gap-x-[50px] gap-y-[50px]">
                         {isLoading && [...Array(5)].map((_, x) => {

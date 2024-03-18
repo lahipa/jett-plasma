@@ -18,7 +18,7 @@ const Footer = () => {
             <div className="flex items-center gap-[16px]">
               {socials.map((sosmed, i) => {
                 return (
-                  <Link key={i.toString()} href={sosmed.url} target="__blank">
+                  <Link key={i.toString()} href={sosmed.url} as={sosmed.url} target="__blank">
                     <Icon icon={sosmed.icon} size={30} />
                   </Link>
                 );

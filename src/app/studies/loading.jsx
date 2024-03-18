@@ -6,7 +6,7 @@ const StudiesLoading = () => {
   return (
     <>
       <div className="h-[70px] lg:hidden" />
-      <section className="relative pt-[150px] pb-[50px]">
+      <section className="relative pt-[50px] lg:pt-[150px] pb-[50px]">
         <Container className="flex flex-col lg:flex-row items-center gap-[10px] lg:gap-[100px]">
             <div className="relative w-full lg:w-[450px] h-[191px] lg:h-[240px] mix-blend-darken">
                 <SquarePlaceholder width="100%" height="100%" />

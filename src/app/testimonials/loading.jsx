@@ -6,7 +6,7 @@ const TestimonialsLoading = () => {
   return (
     <>
       <div className="h-[70px] lg:hidden" />
-      <section className="relative py-[100px]">
+      <section className="relative py-[50px] lg:py-[100px]">
         <Container className="flex flex-col lg:flex-row lg:items-stretch gap-[26px] lg:gap-[60px]">
           <div className="w-[360px] flex items-start mt-[200px] gap-[26px]">
             <div className='relative flex flex-col gap-[26px]'>

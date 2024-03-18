@@ -18,8 +18,8 @@ const StudyList = () => {
 
     return (
         <>
-            <section className="relative pt-[150px] pb-[50px]">
-                <Container className="flex flex-col lg:flex-row items-center gap-[10px] lg:gap-[100px]">
+            <section className="relative pt-[50px] lg:pt-[150px] pb-[50px]">
+                <Container className="flex flex-col lg:flex-row items-center gap-[20px] lg:gap-[100px]">
                     <div className="relative w-full lg:w-[450px] h-[191px] lg:h-[240px] mix-blend-darken">
                         <img className="w-full h-full object-cover" src="/products/product-10.png" alt="" />
                     </div>
@@ -41,7 +41,7 @@ const StudyList = () => {
                 </div>
             </section>
 
-            <section className="relative pt-[100px] pb-[150px]">
+            <section className="relative pt-[50px] pb-[100px] lg:pt-[100px] lg:pb-[150px]">
                 <Container className="flex flex-col gap-[50px] lg:gap-[80px]">
                     <div className="grid  md:grid-cols-2 lg:grid-cols-3 gap-x-[30px] lg:gap-x-[50px] gap-y-[50px]">
                         {isLoading && [...Array(6)].map((_, x) => {

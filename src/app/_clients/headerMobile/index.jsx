@@ -13,7 +13,7 @@ const HeaderMobile = () => {
   const onClickToggle = () => setOpen(!open);
 
   return (
-    <header className="lg:hidden fixed w-full top-0 left-0 right-0 bg-background z-40">
+    <header className="lg:hidden fixed w-full top-0 left-0 right-0 bg-background z-[999]">
       <div className="px-6 flex items-center justify-between h-[70px]">
         <div className="w-[200px] flex items-center justify-start">
           <Logo />
@@ -29,7 +29,7 @@ const HeaderMobile = () => {
         <div className="fixed inset-0 mt-[70px] bg-background">
           <div className="relative px-6 pt-[20px] flex flex-col gap-[60px]">
 
-            <Navigation />
+            <Navigation onCloseMenu={() => setOpen(false)} />
 
             <div className="flex flex-col items-center gap-[30px]">
               <LangSelector />

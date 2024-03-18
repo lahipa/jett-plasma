@@ -8,13 +8,13 @@ export default function About() {
   return (
     <ClientProvider>
       <div className="h-[70px] lg:hidden" />
-      <section className="relative pt-[150px] pb-[100px]">
+      <section className="relative py-[40px] lg:pt-[150px] lg:pb-[100px]">
         <Container className="flex flex-col lg:flex-row lg:items-stretch gap-[50px]">
           <div className="w-[320px] relative" />
           <div className="flex-1 flex flex-col gap-[26px] lg:text-right lg:justify-end">
             <h4 className="text-[40px] lg:text-[70px] font-medium leading-[54px] lg:leading-[88px] mr-[100px]">About Us</h4>
-            <div className="w-full flex items-center ml-[100px] gap-[14px]">
-              <p className="text-[16px] lg:text-[18px] leading-[22px] lg:leading-[27px] lg:max-w-[400px]">
+            <div className="w-full flex flex-col lg:flex-row lg:items-center lg:ml-[100px] gap-[14px]">
+              <p className="text-[18px] leading-[27px] lg:max-w-[400px]">
                 Jett Plasma is a non-invasive cosmetic procedure that utilizes plasma energy to treat various skin conditions and concerns.
               </p>
               <Icon icon="IconAffiliate" size={80} color="text-primary" />
@@ -24,13 +24,13 @@ export default function About() {
           <div className="w-[150px] relative" />
         </Container>
 
-        <div className="h-[480px] lg:w-[395px] -bottom-[420px] left-[300px] absolute flex items-center justify-center z-[1]">
+        <div className="hidden h-[480px] lg:w-[395px] -bottom-[420px] left-[300px] absolute lg:flex items-center justify-center z-[1]">
           <img src="/products/product-25.png" alt="jett pen" className="" />
         </div>
       </section>
 
       <section className="relative z-[2] py-[80px] lg:py-[100px] bg-primary text-white rounded-[40px] lg:rounded-[80px]">
-        <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-x divide-dashed">
+        <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[50px] lg:gap-0 lg:divide-x divide-dashed">
           {aboutAchievement.map((item, x) => {
             return (
               <div key={x} className="w-full h-fit flex justify-center">

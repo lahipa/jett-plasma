@@ -14,13 +14,13 @@ const BtnHeroBanner = () => {
         outline
       />
 
-      <IconButton
+      {/* <IconButton
         variant="white"
         icon="IconDownload"
         className="bg-[#1C1E22]/20"
         size="lg"
         outline
-      />
+      /> */}
     </div>
   );
 };

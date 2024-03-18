@@ -28,13 +28,13 @@ const ShowedVideoModal = ({ show, onClose, slug }) => {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 flex justify-start z-[500] backdrop-filter backdrop-blur-md">
+    <div className="fixed inset-0 flex justify-start z-[9999] backdrop-filter backdrop-blur-md">
       <div className="relative w-full h-screen overflow-x-auto">
         <h4 className="hidden">Modal</h4>
         <div className="fixed top-[30px] right-[40px]">
           <IconButton
             variant="black"
-            icon="IconSquareRoundedX"
+            icon="IconX"
             // outline
             size="lg"
           />

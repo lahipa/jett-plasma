@@ -11,10 +11,10 @@ const Testimonials = () => {
     <ClientProvider>
       <section className="relative py-[100px]">
         <Container className="flex flex-col lg:flex-row lg:items-stretch gap-[26px] lg:gap-[60px]">
-          <div className="w-[360px] flex items-start mt-[200px] gap-[26px]">
+          <div className="w-[360px] flex items-start py-[40px] lg:pt-[200px] lg:pb-0 gap-[26px]">
             <div className='relative flex flex-col gap-[26px]'>
-              <h4 className="text-[20px] lg:text-[40px] font-medium leading-[30px] lg:leading-[54px]">
-                What <b>People</b> Say, <b>About</b> Us
+              <h4 className="text-[30px] lg:text-[40px] font-medium leading-[40px] lg:leading-[54px]">
+                What <b>People</b> Say, <br /> <b>About</b> Us
               </h4>
               <p className="">Jett Plasma Lift Medical is the ultimate solution for all your eye care needs. Its versatility and effectiveness make it the go-to choice for eye care professionals who demand nothing but the best for their patients.</p>
             </div>
@@ -23,7 +23,7 @@ const Testimonials = () => {
           <TestimonialList />
         </Container>
 
-        <div id="pattern-1" className="absolute top-0 lg:top-[80px] left-0 z-[1]">
+        <div id="pattern-1" className="hidden lg:block absolute top-0 lg:top-[80px] left-0 z-[1]">
           <img src="/layouts/pattern-05.svg" alt="pattern-05" className="w-[198px] lg:w-[437px] h-[146px] lg:h-[320px]" />
         </div>
       </section>

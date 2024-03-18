@@ -22,7 +22,7 @@ const ContentStudiesDynamic = (props) => {
     const { category, slug } = props;
 
     const { isLoading, data } = useGetDetailStudies(slug);
-console.log(data)
+
     return (
         <>
             {isLoading && (
@@ -100,7 +100,7 @@ console.log(data)
                                                 return (
                                                     <Markdown
                                                         key={y}
-                                                        className="relative w-full text-inherit !max-w-full prose text-[16px] xl:text-[18px] 3xl:prose-xl font-normal curriculum-description"
+                                                        className="relative w-full text-inherit !max-w-full prose text-[16px] xl:text-[18px] 3xl:prose-xl font-normal"
                                                         remarkPlugins={[Remark]}
                                                     >
                                                         {content.preformatted}

@@ -100,7 +100,7 @@ const ContentVideoDynamic = (props) => {
                                                 return (
                                                     <Markdown
                                                         key={y}
-                                                        className="relative w-full text-inherit !max-w-full prose text-[16px] xl:text-[18px] 3xl:prose-xl font-normal curriculum-description"
+                                                        className="relative w-full text-inherit !max-w-full prose text-[16px] xl:text-[18px] 3xl:prose-xl font-normal"
                                                         remarkPlugins={[Remark]}
                                                     >
                                                         {content.preformatted}

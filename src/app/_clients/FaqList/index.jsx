@@ -1,13 +1,15 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { CardQuestion } from '@/app/_components/cards';
 import { useGetFaqs } from '@/hooks/useFaqsQuery';
 import { SquarePlaceholder } from "@/app/_components/base";
 
 const FaqList = () => {
-
+    const [expanded, setExpanded] = useState(null);
     const { isLoading, data } = useGetFaqs({ locale_code: "en" });
+
+    console.log(data)
     
     return (
         <div className="flex-1 flex flex-col">
@@ -22,8 +24,11 @@ const FaqList = () => {
             {!isLoading && data?.result.data.map((question, index) => (
                 <CardQuestion
                     key={index}
-                    first={index === 0}
+                    i={index}
+                    expanded={expanded}
+                    setExpanded={setExpanded}
                     title={question.faqs_question}
+                    answer={question.faqs_answer}
                 />
             ))}
         </div>

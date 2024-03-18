@@ -2,10 +2,10 @@
 
 import React from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Pagination } from "swiper/modules";
 import Markdown from "react-markdown";
 import Remark from "remark-gfm";
-import { Pagination } from "swiper/modules";
-import Container from "@/app/_components/container";
+import cx from "classnames";
 import { Icon, Heading, SquarePlaceholder, CirclePlaceholder } from "@/app/_components/base";
 import { useGetDetailVideos } from "@/hooks/useVideosQuery";
 import dayjs from "dayjs";
@@ -80,10 +80,17 @@ const ContentVideoDynamic = (props) => {
             {!isLoading && data.result && data.result.sections.map((section, x) => {
                 return (
                     <section key={x.toString()} className="relative py-[50px]">
-                        <div className="relative w-full lg:max-w-[1024px] mx-auto px-[16px] lg:px-0 flex items-stretch gap-[30px]">
+                        <div className="relative w-full lg:max-w-[1024px] mx-auto px-[16px] lg:px-0 flex flex-col lg:flex-row lg:items-stretch gap-[30px]">
                             {columns[section.pcs_identifier].map((column, i) => {
+                                const columnClassName = {
+                                    "100%": "lg:w-full",
+                                    "58.333333%": "lg:w-[58.333333%]",
+                                    "50%": "lg:w-[50%]",
+                                    "41.666667%": "lg:w-[41.666667%]",
+                                }[column];
+
                                 return (
-                                    <div key={i.toString()} className="flex flex-col gap-[30px] justify-center" style={{ width: column }}>
+                                    <div key={i.toString()} className={cx("flex flex-col gap-[30px] justify-center w-full", columnClassName)}>
                                         {section.columns[i].elements.map((element, y) => {
                                             const block = element.pce_element_type;
                                             const content = element.pcc_element_contents;

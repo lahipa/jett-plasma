@@ -7,19 +7,10 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 import React, { useRef } from 'react'
 
-export const SectionFour = () => {
-
-
+const SectionFour = () => {
   const ref = useRef(null);
-  const refSection2 = useRef(null);
-
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end end"],
-  });
-
-  const { scrollYProgress2 } = useScroll({
-    target: refSection2,
     offset: ["start end", "end end"],
   });
 
@@ -27,21 +18,12 @@ export const SectionFour = () => {
     stiffness: 300,
     damping: 40,
   })
-  const scrollYProgressSpring2 = useSpring(scrollYProgress2, {
-    stiffness: 300,
-    damping: 40,
-  })
-
-
-
 
   const imgX1Transform = useTransform(scrollYProgressSpring, [1, 0], [-90, 0])
-  const imgX2Transform =  useTransform(scrollYProgressSpring, [1, 0], ["0%", "140%"])
   const text3XTransform = useTransform(scrollYProgressSpring, [1, 0], ["0%", "40%"])
 
-
   return (
-    <section ref={ref} className="relative h-[1280px] !mb-[150px]">
+    <section ref={ref} className="relative !mb-[150px]">
       <Container className="flex flex-col gap-[60px] lg:gap-[100px]">
         <h4  className="text-[30px] lg:text-[50px] font-medium leading-[40px] lg:leading-[64px]">Revolutionizing Eye Care: The Unmatched Versatility of the Jett Plasma Pen</h4>
 
@@ -84,3 +66,5 @@ export const SectionFour = () => {
     </section>
   )
 }
+
+export  default SectionFour

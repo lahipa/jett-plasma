@@ -18,22 +18,15 @@ const SectionFive = () => {
     damping: 40,
   })
 
-  const imgTransform = useTransform(scrollYProgressSpring, [0, 1], [2, -0.50])
-  const imgTransform2 = useTransform(scrollYProgressSpring, [0, 1], [2, -0.2])
-  const imgTransform3 = useTransform(scrollYProgressSpring, [0, 1], [2, -0.01])
-  const imgTransform4 = useTransform(scrollYProgressSpring, [0, 1], ["30%", "-40%"]);
+  const imgTransform2 = useTransform(scrollYProgressSpring, [0, 1], [2, 0.90])
+  const imgTransform3 = useTransform(scrollYProgressSpring, [0, 1], [2, 1.2])
+  const imgTransform1 = useTransform(scrollYProgressSpring, [0, 1], ["30%", "-5%"]);
 
-  const elementA = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const elementB = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]); 
-
-
-  const textXTransform = useTransform(scrollYProgressSpring, [0, 1], ["0%", "-40%"])
+  const textXTransform = useTransform(scrollYProgressSpring, [0, 1], ["50%", "-120%"])
   const text3XTransform = useTransform(scrollYProgressSpring, [1, 0], [0, 10])
-  const sectionTransform = useTransform(scrollYProgressSpring, [0, 1], ["0", "-100%"]);
-
-
+  
   return (
-    <motion.section ref={ref} style={{ y: sectionTransform }}  className="relative py-[80px] lg:py-[150px] h-[2400px] bg-primary text-white rounded-[40px] lg:rounded-[80px] z-50">
+    <div ref={ref} className="relative py-[80px] lg:py-[150px] h-full bg-primary text-white rounded-[40px] lg:rounded-[80px] z-50">
     <Container className="flex flex-col gap-[60px] lg:gap-[80px]">
       <motion.div style={{ y: textXTransform }}  className="flex flex-col gap-[24px] lg:gap-[80px]">
         <div className="flex flex-col items-start gap-[14px] lg:gap-[30px]">
@@ -47,7 +40,7 @@ const SectionFive = () => {
 
       <div className="flex  flex-col lg:flex-row items-center gap-[40px]">
           <div className="w-full relative lg:w-[420px] h-[162px] flex items-end justify-center rounded-full overflow-hidden bg-white ">
-              <motion.img style={{ y: imgTransform4 }} src="/products/product-17.png" className="mix-blend-darken h-full" />
+              <motion.img style={{ y: imgTransform1 }} src="/products/product-17.png" className="mix-blend-darken h-full" />
           </div>
           <p className="text-[16px] lg:text-[18px] leading-[24px] lg:leading-[28px] lg:font-light flex-1">
             The Jett Plasma Pen Medical contains interchangeable metal heads that, when brought close to the skin, react with atmospheric gases (primarily nitrogen and oxygen) between the metal head and the skin. This interaction is facilitated by DC voltage that ionizes the atmospheric gases, creating plasma.  
@@ -56,7 +49,7 @@ const SectionFive = () => {
 
       <div className="flex flex-col lg:flex-row-reverse items-center gap-[40px]">
           <div className="w-full lg:w-[420px] h-[162px] flex items-center justify-center rounded-full overflow-hidden bg-white">
-              <motion.img  style={{ scale: imgTransform }} src="/products/product-18.png" className="w-full   object-cover" />
+              <motion.img  style={{ scale: imgTransform2 }} src="/products/product-18.png" className="w-full  h-full object-cover" />
           </div>
           <p className="text-[16px] lg:text-[18px] leading-[24px] lg:leading-[28px] lg:font-light flex-1">
             The device generates a tiny plasma arc. When the pen is approximately 2 mm away from the skin, this arc discharges onto the skin's surface. The plasma arc delivers focused thermal energy and micro-discharges to the skin. This energy causes a controlled superficial burn or micro-ablation to the epidermis (the outer skin layer).  
@@ -65,7 +58,7 @@ const SectionFive = () => {
 
       <div className="flex flex-col lg:flex-row items-center gap-[40px]">
           <div className="w-full lg:w-[420px] h-[162px] flex items-center justify-center rounded-full overflow-hidden bg-white">
-              <motion.img style={{ scale: imgTransform2 }} src="/products/product-19.png" className="object-cover w-full h-full" />
+              <motion.img style={{ scale: imgTransform3 }} src="/products/product-19.png" className="object-cover w-full h-full" />
           </div>
           <p className="text-[16px] lg:text-[18px] leading-[24px] lg:leading-[28px] lg:font-light flex-1">
             The high energy and heat of the plasma arc cause the targeted skin tissue to sublimate, meaning it turns directly from a solid to a gas without passing through a liquid phase. This process results in immediate tissue tightening. The thermal disruption, or micro-injuries caused by the plasma arc, stimulate the skin's natural healing response. This includes the production of new collagen and elastin fibers, leading to skin tightening and improvement in skin texture and tone over time.  
@@ -97,7 +90,7 @@ const SectionFive = () => {
     <div id="pattern-1" className="absolute top-0 right-0 z-[1]">
       <img src="/layouts/pattern-03.svg" alt="pattern-03" className="w-[169px] lg:w-[403px] h-[166px] lg:h-[397px]" />
     </div>
-  </motion.section>
+  </div>
   )
 }
 

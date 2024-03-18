@@ -16,14 +16,13 @@ const SectionEight = () => {
     damping: 40,
   })
 
-  const textXTransform = useTransform(scrollYProgressSpring, [0, 1], ["0%", "-32%"])
-  const text2XTransform = useTransform(scrollYProgressSpring, [0, 1], ["-40%", "0%"])
-
+  const imgTransform = useTransform(scrollYProgressSpring, [0, 1], ["20%", "-40%"])
+  const text2XTransform = useTransform(scrollYProgressSpring, [0, 1], ["-20%", "0%"])
 
   return (
-    <section ref={ref} className="relative py-[80px] lg:py-[100px] bg-black text-white rounded-[40px] lg:rounded-[80px] z-[1]">
+    <section ref={ref} className="relative py-[80px] lg:py-[100px] bg-black text-white rounded-[40px] lg:rounded-[80px] z-[1] ">
     <Container className="flex flex-col lg:flex-row-reverse items-stretch gap-[420px] lg:gap-[100px]">
-      <motion.div style={{y: text2XTransform}}  className="flex flex-col gap-[24px] flex-1">
+      <motion.div style={{y: text2XTransform}}  className="flex flex-col gap-[24px] flex-1 ">
         <h4 className="text-[30px] lg:text-[50px] font-medium leading-[40px] lg:leading-[64px]">About Jett Plasma</h4>
         <p className="text-[16px] lg:text-[18px] leading-[24px] lg:leading-[28px]">Jett Plasma Lift Medical is backed by years of research and development, as well as numerous clinical studies, ensuring both safety and efficacy for patients. It is Health Canada approved (unlike most Plasma devices) and provides the most advanced technology and versatile treatment options in a medical Plasma device.</p>
         <ul className="list-disc list-outside ml-[30px] text-[16px] lg:text-[18px] leading-[24px] lg:leading-[28px]">
@@ -38,7 +37,7 @@ const SectionEight = () => {
             <li>Lightweight and portable</li>
           </ul>
       </motion.div>
-      <motion.div style={{y: textXTransform}} className="h-[480px] lg:w-[395px] relative flex items-center justify-center">
+      <motion.div style={{y: imgTransform}} className="h-[480px] lg:w-[395px] relative flex items-center justify-center z-50">
         <img src="/products/product-25.png" alt="jett pen" className="absolute z-[2]" />
       </motion.div>
     </Container>

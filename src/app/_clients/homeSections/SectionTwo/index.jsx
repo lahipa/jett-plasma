@@ -55,7 +55,7 @@ const HomeSectionTwo = () => {
           />
         </div>
         <div className="relative" >
-          <motion.p style={{ y :elementA}} className="text-[16px] lg:text-[18px] leading-[24px] lg:leading-[28px] lg:max-w-[860px]">
+          <p className="text-[16px] lg:text-[18px] leading-[24px] lg:leading-[28px] lg:max-w-[860px]">
             One of the unique features of the Jett Plasma Pen Plasma is its use
             of direct current (DC). DC offers a more stable and controlled
             energy output, which is essential for delicate procedures such as
@@ -68,7 +68,7 @@ const HomeSectionTwo = () => {
             for patients. Jett Plasma Pen is the ideal choice for procedures
             such as upper and lower eyelid tightening, as well as reducing the
             appearance of crow's feet and under-eye wrinkles.
-          </motion.p>
+          </p>
         </div>
       </Container>
     </section>

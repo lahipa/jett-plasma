@@ -1,12 +1,20 @@
 "use client";
 
 import React, { useRef, Fragment } from "react";
+import { useRouter } from 'next/navigation';
 import { motion, useScroll, useTransform } from "framer-motion";
 import Container from "@/app/_components/container";
 import { Badge, Icon, Button } from "@/app/_components/base";
 
 const HomeSectionOne = () => {
+  
+  const router = useRouter();
   const ref = useRef(null);
+
+  const onClickExplore = () => {
+    router.prefetch("/videos");
+    router.push("/videos");
+  };
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -29,12 +37,12 @@ const HomeSectionOne = () => {
             <p className="text-[24px] lg:text-[30px] leading-[34px] lg:leading-[40px]">The first and only plasma pen specifically designed for eye care procedures.</p>
           </div>
 
-          <div className='flex'>
+          <div className='flex relative z-[50]'>
             <Button
                 title="Explore Product"
                 variant="primary"
                 size="lg"
-                onClick={() => console.log("/goto")}
+                onClick={onClickExplore}
             />
           </div>
         </motion.div>

@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { FreeMode } from "swiper/modules";
-import { Icon } from "@/app/_components/base";
+import { Icon, IconButton } from "@/app/_components/base";
 import { limitContentText } from "@/utils/globals";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
@@ -17,8 +17,20 @@ const SliderVideosHomeBar = () => {
 
   return (
     <div className="flex items-center gap-[24px] relative -ml-[16%] -mr-[20px]">
-      <span onClick={() => swiper.slidePrev()}>Left</span>
-      <span onClick={() => swiper.slideNext()}>Right</span>
+      <IconButton
+        variant="base"
+        icon="IconChevronLeft"
+        outline
+        size="lg"
+        onClick={() => swiper.slidePrev()}
+      />
+      <IconButton
+        variant="base"
+        icon="IconChevronRight"
+        outline
+        size="lg"
+        onClick={() => swiper.slideNext()}
+      />
     </div>
   );
 };
@@ -43,7 +55,6 @@ const SliderVideosHome = () => {
     <div className="relative" ref={refSwiper} >
       <Swiper
         slidesPerView={1.2}
-        loop={true}
         spaceBetween={10}
         freeMode={true}
         modules={[FreeMode]}

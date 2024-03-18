@@ -1,13 +1,13 @@
 import React from "react";
 import Container from "@/app/_components/container";
-
-import { jettPlasmaPenResult, jettPlasmaPsycologyEffect, Question } from '@/app/_data';
-import SectionSix from "./_clients/homeSections/SectionSix";
-import SectionSeven from "./_clients/homeSections/SectionSeven";
-import SectionEight from "./_clients/homeSections/SectionEight";
 import SectionTen from "./_clients/homeSections/SectionTen";
 import SectionEleven from "./_clients/homeSections/SectionEleven";
-import { HomeSectionEight, HomeSectionFive, HomeSectionFour, HomeSectionOne, HomeSectionSeven, HomeSectionSix, HomeSectionThree, HomeSectionTwo, SliderVideosHome } from "./_clients";
+import {
+  HomeSectionEight, HomeSectionFive, HomeSectionFour, HomeSectionOne, HomeSectionSeven, HomeSectionSix, HomeSectionThree, HomeSectionTwo, SliderVideosHome
+} from "./_clients";
+
+// data
+import { jettPlasmaPenResult, jettPlasmaPsycologyEffect, Question } from '@/app/_data';
 
 export default function Home() {
   return (
@@ -32,7 +32,6 @@ export default function Home() {
 
       <SectionTen Question={Question} />
       <SectionEleven />
-     
     </>
   );
 }

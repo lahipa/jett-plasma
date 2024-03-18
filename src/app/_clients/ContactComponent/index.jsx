@@ -56,6 +56,7 @@ const ContactComponent = () => {
                           variant="primary"
                           size="lg"
                           fullWidth
+                          onFocus={() => setMessage(prevState => ({ ...prevState, first_name: '' }))}
                         />
                       )}
                     />
@@ -75,6 +76,7 @@ const ContactComponent = () => {
                           variant="primary"
                           size="lg"
                           fullWidth
+                          onFocus={() => setMessage(prevState => ({ ...prevState, last_name: '' }))}
                         />
                       )}
                     />
@@ -96,6 +98,7 @@ const ContactComponent = () => {
                         variant="primary"
                         size="lg"
                         fullWidth
+                        onFocus={() => setMessage(prevState => ({ ...prevState, email: '' }))}
                       />
                     )}
                   />
@@ -115,6 +118,7 @@ const ContactComponent = () => {
                         variant="primary"
                         size="lg"
                         fullWidth
+                        onFocus={() => setMessage(prevState => ({ ...prevState, phone: '' }))}
                       />
                     )}
                   />
@@ -133,6 +137,7 @@ const ContactComponent = () => {
                         variant="primary"
                         size="lg"
                         fullWidth
+                        onFocus={() => setMessage(prevState => ({ ...prevState, message: '' }))}
                       />
                     )}
                   />

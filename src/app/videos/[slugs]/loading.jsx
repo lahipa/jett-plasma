@@ -7,7 +7,7 @@ const VideosDetailLoading = () => {
     <>
         <div className="h-[70px] lg:hidden" />
         <section className="relative py-[50px]">
-            <Container className="flex flex-col lg:flex-row-reverse lg:items-end gap-[50px] lg:gap-[80px]">
+            <Container className="flex flex-col">
                 <div className="flex flex-col gap-[10px]">
                     <SquarePlaceholder width="100%" height={20} />
                     <SquarePlaceholder width={150} height={20} />

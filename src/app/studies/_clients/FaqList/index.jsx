@@ -22,6 +22,7 @@ const FaqList = () => {
             {!isLoading && data?.result.data.map((question, index) => (
                 <CardQuestion
                     key={index}
+                    first={index === 0}
                     title={question.faqs_question}
                 />
             ))}

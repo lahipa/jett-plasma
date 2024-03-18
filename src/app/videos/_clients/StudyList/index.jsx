@@ -31,14 +31,15 @@ const StudyList = () => {
                             );
                         })}
 
-                        {!isLoading && data?.result.studies.data.slice(0, 3).map((product, index) => {
+                        {!isLoading && data?.result.studies.data.slice(0, 3).map((item, index) => {
                             return (
                                 <div key={index} className="flex-1">
                                     <StudyLatestCard
-                                        cover={product.thumbnail}
-                                        code={product.posts_code}
-                                        name={product.posts_title}
-                                        description={product.posts_description}
+                                        slug={item.posts_slug}
+                                        cover={item.thumbnail}
+                                        code={item.posts_code}
+                                        name={item.posts_title}
+                                        description={item.posts_description}
                                     />
                                 </div>
                             );

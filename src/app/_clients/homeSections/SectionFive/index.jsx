@@ -28,15 +28,15 @@ const SectionFive = () => {
   return (
     <div ref={ref} className="relative py-[80px] lg:py-[150px] h-full bg-primary text-white rounded-[40px] lg:rounded-[80px] z-50">
     <Container className="flex flex-col gap-[60px] lg:gap-[80px]">
-      <motion.div style={{ y: textXTransform }}  className="flex flex-col gap-[24px] lg:gap-[80px]">
+      <div className="flex flex-col gap-[24px] lg:gap-[80px]">
         <div className="flex flex-col items-start gap-[14px] lg:gap-[30px]">
           <Badge title="How it Works" outline variant="secondary" />
           <h4 className="text-[30px] lg:text-[80px] font-medium leading-[40px] lg:leading-[94px]">Plasma Unveiled: <br /> Understanding the Science Behind Jett Plasma Pen Medical</h4>
         </div>
-        <motion.div style={{ y: text3XTransform }} className="flex justify-start">
+        <div className="flex justify-start">
           <p className="text-[24px] lg:text-[30px] leading-[34px] lg:leading-[40px] lg:max-w-[710px]">Plasma is one of the four fundamental states of matter, the others being solid, liquid, and gas.</p>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
       <div className="flex  flex-col lg:flex-row items-center gap-[40px]">
           <div className="w-full relative lg:w-[420px] h-[162px] flex items-end justify-center rounded-full overflow-hidden bg-white ">

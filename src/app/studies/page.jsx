@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import Container from "@/app/_components/container";
 import { Badge } from "@/app/_components/base";
-import { ClientProvider } from "@/app/_clients";
-import { FaqList, StudyList, VideoList } from "@/app/studies/_clients";
+import { ClientProvider, FaqList } from "@/app/_clients";
+import { StudyList, VideoList } from "@/app/studies/_clients";
 
 // data
 import { studiesData, Question, Treatments } from "@/app/_data";

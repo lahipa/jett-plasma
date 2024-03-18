@@ -4,7 +4,7 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { Badge } from '@/app/_components/base';
 import { CardQuestion } from '@/app/_components/cards';
 import Container from '@/app/_components/container';
-import { FaqList } from "@/app/studies/_clients";
+import { FaqList } from "@/app/_clients";
 import { ClientProvider } from "@/app/_clients";
 
 const SectionTen = ({ Question }) => {

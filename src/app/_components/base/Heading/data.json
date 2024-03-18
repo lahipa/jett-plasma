@@ -1,0 +1,46 @@
+{
+    "heading-1": {
+        "className": "text-4xl",
+        "style": {
+            "fontSize": 42,
+            "lineHeight": 1.4,
+            "maxWidth": "70%"
+        }
+    },
+    "heading-2": {
+        "className": "text-2xl",
+        "style": {
+            "fontSize": 34,
+            "lineHeight": 1.4,
+            "maxWidth": "60%"
+        }
+    },
+    "heading-3": {
+        "className": "text-xl",
+        "style": {
+            "fontSize": 28,
+            "maxWidth": "55%"
+        }
+    },
+    "heading-4": {
+        "className": "text-md",
+        "style": {
+            "fontSize": 24,
+            "maxWidth": "100%"
+        }
+    },
+    "heading-5": {
+        "className": "text-tiny",
+        "style": {
+            "fontSize": 18,
+            "maxWidth": "100%"
+        }
+    },
+    "heading-6": {
+        "className": "text-sm",
+        "style": {
+            "fontSize": 14,
+            "maxWidth": "100%"
+        }
+    }
+}

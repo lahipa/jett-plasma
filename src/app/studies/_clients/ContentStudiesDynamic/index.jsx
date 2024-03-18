@@ -2,9 +2,11 @@
 
 import React from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import Markdown from "react-markdown";
+import Remark from "remark-gfm";
 import { Pagination } from "swiper/modules";
 import Container from "@/app/_components/container";
-import { Icon, SquarePlaceholder, CirclePlaceholder } from "@/app/_components/base";
+import { Icon, Heading, SquarePlaceholder, CirclePlaceholder } from "@/app/_components/base";
 import { useGetDetailStudies } from "@/hooks/useStudiesQuery";
 import dayjs from "dayjs";
 
@@ -20,65 +22,68 @@ const ContentStudiesDynamic = (props) => {
     const { category, slug } = props;
 
     const { isLoading, data } = useGetDetailStudies(slug);
-
+console.log(data)
     return (
         <>
             {isLoading && (
                 <>
                     <section className="relative py-[50px]">
-                        <Container className="">
-                            <div className="flex flex-col gap-[10px]">
-                                <SquarePlaceholder width="100%" height={20} />
-                                <SquarePlaceholder width={150} height={20} />
-                            </div>
-                        </Container>
+                        <div className="relative w-full lg:max-w-[1024px] mx-auto px-[16px] flex flex-col gap-[10px]">
+                            <SquarePlaceholder width="100%" height={20} />
+                            <SquarePlaceholder width={150} height={20} />
+                        </div>
                     </section>
 
-                    <section className="relative pt-[100px] pb-[150px]">
-                        <Container className="flex flex-col gap-[50px] lg:gap-[80px]">
-                            <div className="grid  md:grid-cols-2 lg:grid-cols-3 gap-x-[30px] lg:gap-x-[50px] gap-y-[50px]">
-                                {[...Array(5)].map((_, x) => {
-                                    return (
-                                        <div key={x} className="flex-1 flex flex-col gap-[22px]">
-                                            <div className="w-full h-[218px] lg:h-[232px] relative rounded-[20px] overflow-hidden">
-                                                <SquarePlaceholder width="100%" height="100%" />
-                                            </div>
-                                            <div className="flex flex-col gap-[10px]">
-                                                <SquarePlaceholder width="100%" height={20} />
-                                                <SquarePlaceholder width={150} height={20} />
-                                            </div>
+                    <section className="relative py-[50px]">
+                        <div className="relative w-full lg:max-w-[1024px] mx-auto px-[16px] flex flex-col gap-[50px] lg:gap-[80px]">
+                            {[...Array(5)].map((_, x) => {
+                                return (
+                                    <div key={x} className="flex-1 flex flex-col gap-[22px]">
+                                        <div className="w-full h-[218px] lg:h-[232px] relative rounded-[20px] overflow-hidden">
+                                            <SquarePlaceholder width="100%" height="100%" />
                                         </div>
-                                    );
-                                })}
-                            </div>
-                        </Container>
+                                        <div className="flex flex-col gap-[10px]">
+                                            <SquarePlaceholder width="100%" height={20} />
+                                            <SquarePlaceholder width={150} height={20} />
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </section>
                 </>
             )}
 
             {!isLoading && data.result && (
                 <section className="relative pt-[60px] pb-0">
-                    <Container className="flex items-stretch justify-between gap-[50px]">
-                        <div className="flex flex-col gap-[15px]">
+                    <div className="relative w-full lg:max-w-[1024px] mx-auto px-[16px] lg:px-0 flex flex-col lg:flex-row-reverse lg:items-stretch gap-[50px]">
+                        <div className="flex-1 flex flex-col gap-[15px]">
                             <h4 className="text-[30px] lg:text-[50px] font-medium leading-[40px] lg:leading-[64px]">
                                 {data.result.posts_title}
                             </h4>
                             <div className="flex items-center gap-[10px]">
                                 <Icon icon="IconCalendar" color="text-primary" />
-                                <span className="text-[16px] lg:text-[18px] leading-[24px] lg:leading-[28px]">{dayjs(data.result.created_at).format("DD/MM/YYYY, HH:mm")}</span>
+                                <span className="text-[16px] lg:text-[16px] leading-[24px] lg:leading-[28px]">{dayjs(data.result.created_at).format("DD/MM/YYYY, HH:mm")}</span>
+                            </div>
+                            <div className="mt-[10px]">
+                                <p className="text-[18px] leading-[28px] italic">{data.result.posts_description}</p>
                             </div>
                         </div>
-                    </Container>
+
+                        {/* <picture className="w-[300px] h-[300px] relative overflow-hidden aspect-square border border-white rounded-[30px]">
+                            <img src={data.result.thumbnail} className="w-full h-full object-cover" />
+                        </picture> */}
+                    </div>
                 </section>
             )}
 
             {!isLoading && data.result && data.result.sections.map((section, x) => {
                 return (
-                    <section key={x.toString()} className="relative py-[100px]">
-                        <Container>
+                    <section key={x.toString()} className="relative py-[50px]">
+                        <div className="relative w-full lg:max-w-[1024px] mx-auto px-[16px] lg:px-0">
                             {columns[section.pcs_identifier].map((column, i) => {
                                 return (
-                                    <div key={i.toString()} className="" style={{ width: column }}>
+                                    <div key={i.toString()} className="flex flex-col gap-[30px]" style={{ width: column }}>
                                         {section.columns[i].elements.map((element, y) => {
                                             const block = element.pce_element_type;
                                             const content = element.pcc_element_contents;
@@ -95,11 +100,23 @@ const ContentStudiesDynamic = (props) => {
                                                 return (
                                                     <Markdown
                                                         key={y}
-                                                        className="relative w-full text-inherit !max-w-full prose text-[14px] xl:text-[18px] 3xl:prose-xl font-normal curriculum-description"
+                                                        className="relative w-full text-inherit !max-w-full prose text-[16px] xl:text-[18px] 3xl:prose-xl font-normal curriculum-description"
                                                         remarkPlugins={[Remark]}
                                                     >
                                                         {content.preformatted}
                                                     </Markdown>
+                                                );
+                                            }
+
+                                            if (block === "quote") {
+                                                return (
+                                                    <blockquote key={y} className="relative px-[40px] py-[50px] flex flex-col gap-[20px] bg-primary text-white rounded-[20px] lg:rounded-[40px]">
+                                                        <div className="absolute -top-[40px] left-[40px] rotate-12 bg-background p-[10px] rounded-full">
+                                                            <Icon icon="IconQuote" size={50} color="text-primary" />
+                                                        </div>
+                                                        <p>{content.quoteText}</p>
+                                                        {!content.quoteIsAnonymous && <span className="text-[14px] font-medium uppercase">- {content.quoteBy} -</span>}
+                                                    </blockquote>
                                                 );
                                             }
 
@@ -167,7 +184,7 @@ const ContentStudiesDynamic = (props) => {
                                                 const youtubePlayId = searchParams.get('v');
 
                                                 return (
-                                                    <div key={y} className="relative h-[680px] bg-black overflow-hidden">
+                                                    <div key={y} className="relative h-[520px] bg-black overflow-hidden">
                                                         <iframe
                                                             type="text/html"
                                                             src={`https://www.youtube.com/embed/${youtubePlayId}?autoplay=0`}
@@ -207,7 +224,7 @@ const ContentStudiesDynamic = (props) => {
                                     </div>
                                 );
                             })}
-                        </Container>
+                        </div>
                     </section>
                 );
             })}

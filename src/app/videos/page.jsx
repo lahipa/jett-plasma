@@ -2,7 +2,7 @@ import Container from "@/app/_components/container";
 import { Badge } from "@/app/_components/base";
 import { ClientProvider, CtaLayoutContact } from "@/app/_clients";
 import { StudyList, VideoList } from "@/app/videos/_clients";
-import { FaqList } from "@/app/studies/_clients";
+import { FaqList } from "@/app/_clients";
 // import { limitContentText } from "@/utils/globals";
 
 export default function Videos() {

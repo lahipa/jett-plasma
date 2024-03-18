@@ -1,6 +1,6 @@
 import Container from "@/app/_components/container";
 import { Icon, Badge } from "@/app/_components/base";
-import { FaqList } from "@/app/studies/_clients";
+import { FaqList } from "@/app/_clients";
 import { aboutAchievement } from "@/app/_data";
 import { ClientProvider, CtaLayoutContact } from "@/app/_clients";
 

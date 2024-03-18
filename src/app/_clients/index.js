@@ -7,6 +7,7 @@ import SliderVideosHome from "./sliderVideosHome";
 import BeforeAfterImage from "./beforeAfterImage";
 import ContactComponent from "./ContactComponent";
 import ClientProvider from "./ClientProvider";
+import FaqList from "./FaqList";
 
 export * from "./homeSections";
 export {
@@ -19,4 +20,5 @@ export {
     BeforeAfterImage,
     ContactComponent,
     ClientProvider,
+    FaqList,
 };

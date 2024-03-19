@@ -19,7 +19,13 @@ const SectionSeven = () => {
   return (
     <section ref={ref} className="relative pt-[150px] pb-[80px] lg:pb-[300px]">
       <Container className="flex flex-col gap-[30px] lg:gap-[40px]">
-        <motion.div style={{y: textY3Transform}} className="mix-blend-darken">
+        <motion.div
+            initial={{ opacity: 0, y: 90 }}
+            whileInView={{ opacity: 1, y: 50 }}
+            transition={{
+              duration: ".5",
+              delay: .05
+            }} className="mix-blend-darken">
           <h4 className="text-[30px] lg:text-[50px] font-medium leading-[40px] lg:leading-[64px] text-center">Suitable for</h4>
           <div className="flex flex-col lg:flex-row lg:items-end justify-center gap-[50px] lg:gap-[80px]">
             <div className="flex flex-col gap-[14px] lg:max-w-[350px]">

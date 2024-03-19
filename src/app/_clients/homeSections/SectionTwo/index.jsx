@@ -1,10 +1,14 @@
 "use client"
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform, useInView, useSpring } from "framer-motion";
 import Container from "@/app/_components/container";
 
 const HomeSectionTwo = () => {
   const ref = useRef(null);
+  const { ref: sectionRef, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -14,7 +18,7 @@ const HomeSectionTwo = () => {
   const scrollYProgressSpring = useSpring(scrollYProgress);
 
   const elementA = useTransform(scrollYProgress, [0, 1], ["-40", "100%"]);
-  const elementB = useTransform(scrollYProgress, [0, 1], [-100, 120]);
+  const elementB = useTransform(scrollYProgress, [0, 1], [-100, 180]);
 
   return (
     <section
@@ -23,12 +27,18 @@ const HomeSectionTwo = () => {
     >
       <Container className="flex flex-col gap-[60px] lg:gap-[100px]">
         <div className="flex flex-col lg:flex-row lg:items-end gap-[14px] lg:gap-[100px]">
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 140 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: ".5",
+              delay: .05
+            }}
             className="text-[30px] lg:text-[80px] font-medium lg:w-[860px] leading-[40px] lg:leading-[94px]"
           >
             Elevate Your Aesthetics without the AC: The Unmatched Benefits of DC
             Current in Plasma Treatment
-          </div>
+          </motion.div>
           <div className="flex flex-col gap-[14px] lg:gap-[24px] flex-1 items-end h-auto lg:h-[450px]">
             <img
               src="/products/product-14.png"
@@ -43,19 +53,21 @@ const HomeSectionTwo = () => {
             </p>
           </div>
         </div>
-        <div
-          className="flex items-center"
-          transition={{ ease: "easeOut", duration: 0.5 }}
-        >
+        <div className="flex items-center">
           <motion.img
-            style={{ x:  elementB}}
+            initial={{ x: -80 }}
+            whileInView={{ x: 80 }}
+            transition={{
+                duration: ".5",
+                delay: .05
+            }}
             src="/products/product-29.png"
             alt="Product Pen"
             className="w-full h-auto"
           />
         </div>
-        <div className="relative" >
-          <p className="text-[16px] lg:text-[18px] leading-[24px] lg:leading-[28px] lg:max-w-[860px]">
+        <div>
+          <motion.p style={{ y: elementB }} className="text-[16px] lg:text-[18px] leading-[24px] lg:leading-[28px] lg:max-w-[860px]">
             One of the unique features of the Jett Plasma Pen Plasma is its use
             of direct current (DC). DC offers a more stable and controlled
             energy output, which is essential for delicate procedures such as
@@ -68,7 +80,7 @@ const HomeSectionTwo = () => {
             for patients. Jett Plasma Pen is the ideal choice for procedures
             such as upper and lower eyelid tightening, as well as reducing the
             appearance of crow's feet and under-eye wrinkles.
-          </p>
+          </motion.p>
         </div>
       </Container>
     </section>
@@ -76,3 +88,5 @@ const HomeSectionTwo = () => {
 };
 
 export default HomeSectionTwo;
+
+

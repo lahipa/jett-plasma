@@ -18,7 +18,7 @@ const HomeSectionTwo = () => {
   const scrollYProgressSpring = useSpring(scrollYProgress);
 
   const elementA = useTransform(scrollYProgress, [0, 1], ["-40", "100%"]);
-  const elementB = useTransform(scrollYProgress, [0, 1], [-100, 180]);
+  const elementB = useTransform(scrollYProgress, [0, 1], [-100, 120]);
 
   return (
     <section
@@ -55,12 +55,13 @@ const HomeSectionTwo = () => {
         </div>
         <div className="flex items-center">
           <motion.img
-            initial={{ x: -80 }}
-            whileInView={{ x: 80 }}
-            transition={{
-                duration: ".5",
-                delay: .05
-            }}
+            // initial={{ x: -80 }}
+            // whileInView={{ x: 80 }}
+            // transition={{
+            //     duration: ".5",
+            //     delay: .05
+            // }}
+            style={{ x:  elementB }}
             src="/products/product-29.png"
             alt="Product Pen"
             className="w-full h-auto"

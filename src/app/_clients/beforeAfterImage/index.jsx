@@ -14,11 +14,13 @@ const BeforeAfterImage = (props) => {
         setSliderPosition,
         isDragging,
         setIsDragging,
-        isScroll
+        isScroll,
+        setIsScroll,
     } = props
 
     const handleMove = (e) => {
         if (!isDragging) return;
+        setIsScroll(false);
 
         const rect = e.currentTarget.getBoundingClientRect();
         const x = Math.max(0, Math.min(event.clientX - rect.left, rect.width));

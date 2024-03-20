@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, Fragment, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { motion, useMotionTemplate, useScroll, useSpring, useTransform } from "framer-motion";
 import Container from "@/app/_components/container";
 import { BeforeAfterImage } from "@/app/_clients";
@@ -34,23 +34,7 @@ const HomeSectionThree = () => {
   const elementACalc = useMotionTemplate`calc(${elementA}% - 1px)`
   const elementBCalc = useMotionTemplate`inset(0 ${elementB}% 0 0)`
 
-  scrollYProgress.on('change', (latestValue) => {
-    if(latestValue === 1){
-      setIsScroll(false)
-      setSliderPosition(elementA.get())
-    }else{
-      setIsScroll(true)
-    }
-  })
-
-  // useEffect(() => {
-  //   if(isDragging){
-  //     setIsScroll(false)
-  //     setSliderPosition(elementA.get())
-  //   }else{
-  //     setIsScroll(true)
-  //   }
-  // }, [isDragging])
+  scrollYProgress.on('change', (latestValue) => { setIsScroll(true); });
 
   return (
     <section ref={ref} className="relative py-[80px] lg:py-[150px]">
@@ -102,6 +86,7 @@ const HomeSectionThree = () => {
               elementACalc={elementACalc}
               elementBCalc={elementBCalc}
               isScroll={isScroll}
+              setIsScroll={setIsScroll}
             />
 
             <div className="relative lg:p-[30px]">

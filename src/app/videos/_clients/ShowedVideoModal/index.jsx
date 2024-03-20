@@ -41,7 +41,7 @@ const ShowedVideoModal = ({ show, onClose, slug }) => {
         </div>
 
         <div ref={dialogRef} className="w-full max-w-screen-xl relative flex flex-col md:ml-10">
-          <div className="relative min-h-screen bg-background p-[30px] shadow-xl">
+          <div className="relative min-h-screen bg-background p-[30px] text-[#1C1E22] shadow-xl">
             
             <ContentVideoDynamic category="video" slug={slug} />
 

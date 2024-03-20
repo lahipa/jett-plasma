@@ -49,7 +49,7 @@ const SliderVideosHome = () => {
   });
 
   const imgTransform = useTransform(scrollYProgressSpring, [0, 1], [2,  1.3])
-  const element1= useTransform(scrollYProgressSpring, [1, 0], [-230, 0]);
+  const element1= useTransform(scrollYProgressSpring, [1, 0], [-50, 0]);
 
   return (
     <div className="relative" ref={refSwiper} >

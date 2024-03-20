@@ -79,7 +79,7 @@ const ContentVideoDynamic = (props) => {
 
             {!isLoading && data.result && data.result.sections.map((section, x) => {
                 return (
-                    <section key={x.toString()} className="relative py-[50px]">
+                    <section key={x.toString()} className="relative py-[50px] text-[#1C1E22]">
                         <div className="relative w-full lg:max-w-[1024px] mx-auto px-[16px] lg:px-0 flex flex-col lg:flex-row lg:items-stretch gap-[30px]">
                             {columns[section.pcs_identifier].map((column, i) => {
                                 const columnClassName = {

@@ -28,14 +28,15 @@ const SectionFive = () => {
   return (
     <div ref={ref} className="relative py-[80px] lg:py-[150px] h-full bg-primary text-white rounded-[40px] lg:rounded-[80px] z-50">
     <Container className="flex flex-col gap-[60px] lg:gap-[80px]">
-      <motion.div className="flex flex-col gap-[24px] lg:gap-[80px]"
-      initial={{ opacity: 0, y: 140 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: ".5",
-        delay: .05
-      }}
-       >
+      <motion.div 
+        initial={{ y: 30 }}
+        whileInView={{ y: 0 }}
+        transition={{
+          duration: ".5",
+          delay: .05
+        }}
+        className="flex flex-col gap-[24px] lg:gap-[80px]"
+      >
         <div className="flex flex-col items-start gap-[14px] lg:gap-[30px]">
           <Badge title="How it Works" outline variant="secondary" />
           <h4 className="text-[30px] lg:text-[80px] font-medium leading-[40px] lg:leading-[94px]">Plasma Unveiled: <br /> Understanding the Science Behind Jett Plasma Pen Medical</h4>
@@ -45,30 +46,32 @@ const SectionFive = () => {
         </div>
       </motion.div>
 
-      <motion.div 
-      
-      initial={{ y: 20 }}
-      whileInView={{  y: 0 }}
-      transition={{
-        duration: ".5",
-        delay: .05
-      }}
-      className="flex  flex-col lg:flex-row items-center gap-[40px] overflow-hidden">
-          <div className="w-full relative lg:w-[420px] h-[162px] flex items-end justify-center rounded-full overflow-hidden bg-white ">
-              <motion.img style={{ y: imgTransform1 }} src="/products/product-17.png" className="mix-blend-darken h-full" />
+      <div 
+        // initial={{ y: 20 }}
+        // whileInView={{  y: 0 }}
+        // transition={{
+        //   duration: ".5",
+        //   delay: .05
+        // }}
+        className="flex  flex-col lg:flex-row items-center gap-[40px] overflow-hidden"
+      >
+          <div className="w-full relative lg:w-[420px] h-[162px] flex items-end justify-center rounded-full overflow-hidden bg-white">
+              <motion.img style={{ y: imgTransform1 }} src="/products/product-17.png" className="mix-blend-darken h-full rounded-full" />
           </div>
           <p className="text-[16px] lg:text-[18px] leading-[24px] lg:leading-[28px] lg:font-light flex-1">
             The Jett Plasma Pen Medical contains interchangeable metal heads that, when brought close to the skin, react with atmospheric gases (primarily nitrogen and oxygen) between the metal head and the skin. This interaction is facilitated by DC voltage that ionizes the atmospheric gases, creating plasma.  
           </p>
-      </motion.div>
-      <motion.div 
+      </div>
       
-      initial={{ y: 20 }}
-      whileInView={{  y: 0 }}
-      transition={{
-        duration: ".5",
-        delay: .05
-      }} className="flex flex-col lg:flex-row-reverse items-center gap-[40px] overflow-hidden">
+      <motion.div 
+        initial={{ y: 20 }}
+        whileInView={{  y: 0 }}
+        transition={{
+          duration: ".5",
+          delay: .05
+        }}
+        className="flex flex-col lg:flex-row-reverse items-center gap-[40px] overflow-hidden"
+      >
           <div className="w-full lg:w-[420px] h-[162px] flex items-center justify-center rounded-full overflow-hidden bg-white">
               <motion.img  style={{ scale: imgTransform2 }} src="/products/product-18.png" className="w-full  h-full object-cover" />
           </div>
@@ -78,13 +81,14 @@ const SectionFive = () => {
       </motion.div>
 
       <motion.div 
-      
-      initial={{ y: 20 }}
-      whileInView={{  y: 0 }}
-      transition={{
-        duration: ".5",
-        delay: .05
-      }} className="flex flex-col lg:flex-row items-center gap-[40px]">
+        initial={{ y: 20 }}
+        whileInView={{  y: 0 }}
+        transition={{
+          duration: ".5",
+          delay: .05
+        }} 
+        className="flex flex-col lg:flex-row items-center gap-[40px]"
+      >
           <div className="w-full lg:w-[420px] h-[162px] flex items-center justify-center rounded-full overflow-hidden bg-white">
               <motion.img style={{ scale: imgTransform3 }} src="/products/product-19.png" className="object-cover w-full h-full" />
           </div>
@@ -94,13 +98,14 @@ const SectionFive = () => {
       </motion.div>
 
       <motion.div 
-      
-      initial={{ y: 20 }}
-      whileInView={{  y: 0 }}
-      transition={{
-        duration: ".5",
-        delay: .05
-      }} className="flex flex-col lg:flex-row-reverse items-center gap-[40px]">
+        initial={{ y: 20 }}
+        whileInView={{  y: 0 }}
+        transition={{
+          duration: ".5",
+          delay: .05
+        }}
+        className="flex flex-col lg:flex-row-reverse items-center gap-[40px]"
+      >
           <div className="relative w-full lg:w-[420px] h-[162px] flex items-center justify-center rounded-full overflow-hidden bg-white">
               <motion.img style={{ scale: imgTransform3 }} src="/products/product-20.png" className="object-cover w-full h-full" />
           </div>
@@ -110,13 +115,14 @@ const SectionFive = () => {
       </motion.div>
 
       <motion.div 
-      
-      initial={{ y: 20 }}
-      whileInView={{  y: 0 }}
-      transition={{
-        duration: ".5",
-        delay: .05
-      }} className="flex flex-col lg:flex-row items-center gap-[40px] mt-[60px] lg:mt-0 overflow-hidden lg:overflow-visible">
+        initial={{ y: 20 }}
+        whileInView={{  y: 0 }}
+        transition={{
+          duration: ".5",
+          delay: .05
+        }} 
+        className="flex flex-col lg:flex-row items-center gap-[40px] mt-[60px] lg:mt-0 overflow-hidden lg:overflow-visible"
+      >
           <div className="absolute lg:relative -left-[215px] lg:left-0 flex justify-center rounded-full">
               <div className="relative w-[590px] h-[360px] rounded-full overflow-hidden z-[3] bg-white outline-none">
                 <img src="/products/product-21a.png" className="w-[590px] h-[360px] relative z-[3]" />

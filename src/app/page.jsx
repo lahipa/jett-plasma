@@ -1,9 +1,10 @@
 import React from "react";
 import Container from "@/app/_components/container";
+import { ClientProvider } from "@/app/_clients";
 import SectionTen from "./_clients/homeSections/SectionTen";
 import SectionEleven from "./_clients/homeSections/SectionEleven";
 import {
-  HomeSectionEight, HomeSectionFive, HomeSectionFour, HomeSectionOne, HomeSectionSeven, HomeSectionSix, HomeSectionThree, HomeSectionTwo, SliderVideosHome
+  HomeSectionEight, HomeSectionFive, HomeSectionFour, HomeSectionOne, HomeSectionSeven, HomeSectionSix, HomeSectionThree, HomeSectionTwo, SliderVideosHome,
 } from "./_clients";
 
 // data
@@ -27,7 +28,9 @@ export default function Home() {
           <h4 className="text-[30px] lg:text-[50px] font-medium leading-[40px] lg:leading-[64px] text-center">Jett Plasma in Aesthetics</h4>
         </Container>
 
-        <SliderVideosHome />
+        <ClientProvider>
+          <SliderVideosHome />
+        </ClientProvider>
       </section>
 
       <SectionTen Question={Question} />

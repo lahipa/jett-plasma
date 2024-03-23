@@ -62,7 +62,7 @@ const VideoList = () => {
                             );
                         })}
 
-                        {!isLoading && data?.result.videos.data.slice(0, 3).map((item, index) => {
+                        {!isLoading && data?.result.videos.data.filter((n) => n.posts_code !== "video-hero").slice(0, 3).map((item, index) => {
                             return (
                                 <div key={index} className="flex-1">
                                     <VideoItemCard

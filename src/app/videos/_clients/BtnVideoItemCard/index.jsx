@@ -22,6 +22,11 @@ const BtnVideoItemCard = ({ slug, duration }) => {
         setOpen(false);
     };
 
+    const onClickShowMobile = () => {
+        router.prefetch(`/videos/${slug}`);
+        router.push(`/videos/${slug}`);
+    };
+
     return (
         <>
             <div className="absolute bottom-0 w-full p-[16px] flex flex-row items-center gap-[10px]">
@@ -29,8 +34,15 @@ const BtnVideoItemCard = ({ slug, duration }) => {
                     <IconButton
                         variant="white"
                         icon="IconPlayerPlayFilled"
-                        className="bg-[#1C1E22]/20"
+                        className=" hidden lg:block bg-[#1C1E22]/20"
                         onClick={onClickOpen}
+                        outline
+                    />
+                    <IconButton
+                        variant="white"
+                        icon="IconPlayerPlayFilled"
+                        className="lg:hidden bg-[#1C1E22]/20"
+                        onClick={onClickShowMobile}
                         outline
                     />
                     <span className="hidden lg:block text-[16px] leading-[24px]">

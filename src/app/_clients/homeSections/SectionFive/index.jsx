@@ -56,7 +56,7 @@ const SectionFive = () => {
         className="flex  flex-col lg:flex-row items-center gap-[40px] overflow-hidden"
       >
           <div className="w-full relative lg:w-[420px] h-[162px] flex items-end justify-center rounded-full overflow-hidden bg-white">
-              <motion.img style={{ y: imgTransform1 }} src="/products/product-17.png" className="mix-blend-darken h-full rounded-full" />
+              <motion.img style={{ y: imgTransform1 }} src="/products/jett-plasma-dermatology-applicators.png" className="mix-blend-darken h-full rounded-full" />
           </div>
           <p className="text-[16px] lg:text-[18px] leading-[24px] lg:leading-[28px] lg:font-light flex-1">
             The Jett Plasma Pen Medical contains interchangeable metal heads that, when brought close to the skin, react with atmospheric gases (primarily nitrogen and oxygen) between the metal head and the skin. This interaction is facilitated by DC voltage that ionizes the atmospheric gases, creating plasma.  

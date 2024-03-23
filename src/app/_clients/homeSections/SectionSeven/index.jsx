@@ -54,7 +54,7 @@ const SectionSeven = () => {
               </ul>
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row items-stretch gap-[50px]">
+          <div className="flex flex-col lg:flex-row items-stretch gap-[50px] pt-[30px] pb-[20px]">
             <div className="flex flex-col gap-[14px] flex-1">
               <picture className="w-full h-[250px] flex items-center justify-center">
                 <img src="/products/product-22.png" className="mix-blend-darken" />

@@ -53,8 +53,8 @@ export default function About() {
           <div className="lg:col-span-2">
             <p className="text-[18px] leading-[32px]">
               {`
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae tincidunt nulla. Praesent et malesuada elit, nec mollis nibh. Sed vestibulum scelerisque lacinia. Phasellus pulvinar, massa vel suscipit finibus, quam dolor finibus dui, ac pulvinar magna orci molestie mauris. Integer ac neque in elit maximus semper. Nunc vel lorem justo. Fusce tempus vehicula ante vel ullamcorper. 
-                Sed tincidunt facilisis elit, nec varius ligula tristique non. Vivamus eu dignissim quam.
+                LJett Plasma Lift Medical is backed by years of research and development, as well as numerous clinical studies, ensuring both safety and efficacy for patients.
+                It is Health Canada approved (unlike most Plasma devices) and provides the most advanced technology and versatile treatment options in a medical Plasma device.
               `}
             </p>
           </div>

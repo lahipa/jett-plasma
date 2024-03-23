@@ -36,8 +36,7 @@ const HomeSectionTwo = () => {
             }}
             className="text-[30px] lg:text-[80px] font-medium lg:w-[860px] leading-[40px] lg:leading-[94px]"
           >
-            Elevate Your Aesthetics without the AC: The Unmatched Benefits of DC
-            Current in Plasma Treatment
+            The unmatched benefits and precision of DC current in plasma treatment: Elevating esthetics beyond AC.
           </motion.div>
           <div className="flex flex-col gap-[14px] lg:gap-[24px] flex-1 items-end h-auto lg:h-[450px]">
             <img
@@ -46,10 +45,7 @@ const HomeSectionTwo = () => {
               className="w-full lg:max-w-[260px] h-auto"
             />
             <p className="text-[16px] lg:text-[18px] leading-[24px] lg:leading-[28px] lg:max-w-[260px]">
-              Not all plasma pens are created equal! The Jett Plasma Pen Plasma
-              has emerged as the gold standard for use in ophthalmology,
-              aesthetics, and dermatology, thanks to its superior precision
-              and ability to perform both ablative and non-ablative procedures.
+              Not all plasma pens are created equal! The Jett Plasma Pen has emerged as the gold standard for use in ophthalmology, aesthetics, and dermatology thanks to its ergonomic and lightweight design, superior precision, and ability to perform both ablative and non-ablative procedures.
             </p>
           </div>
         </div>
@@ -69,18 +65,9 @@ const HomeSectionTwo = () => {
         </div>
         <div>
           <motion.p style={{ y: elementB }} className="text-[16px] lg:text-[18px] leading-[24px] lg:leading-[28px] lg:max-w-[860px]">
-            One of the unique features of the Jett Plasma Pen Plasma is its use
-            of direct current (DC). DC offers a more stable and controlled
-            energy output, which is essential for delicate procedures such as
-            non-surgical blepharoplasty, dry eye/MGD/blepharitis treatment,
-            skin tightening, and easy removal of benign vascular and skin
-            lesions. Traditional plasma pens utilizing AC can be more
-            unpredictable and less precise, leading to a higher risk of
-            complications and uneven results. DC technology means less
-            downtime, less risk of scarring, and more natural-looking results
-            for patients. Jett Plasma Pen is the ideal choice for procedures
-            such as upper and lower eyelid tightening, as well as reducing the
-            appearance of crow's feet and under-eye wrinkles.
+            The Jett Plasma Pen's unique and patented use of direct current (DC) offers a more stable and controlled energy output when compared to (AC)alternating current. DC provides the accuracy essential for delicate procedures such as non-surgical blepharoplasty, dry eye/MGD/blepharitis treatment, skin tightening, and easy removal of benign vascular and skin lesions.
+            By nature of plasma dispersal, AC devices are less predictable and precise, leading to a higher risk of complications and uneven results. DC technology reduces downtime and the risk of scarring, resulting in more natural-looking results for patients.
+            The Jett Plasma Pen is the ideal choice for tightening the upper and lower eyelids and reducing the appearance of crow's feet and under-eye wrinkles.
           </motion.p>
         </div>
       </Container>

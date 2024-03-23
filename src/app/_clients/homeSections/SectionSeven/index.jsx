@@ -49,6 +49,8 @@ const SectionSeven = () => {
                 <li>Restoration of connective tissues</li>
                 <li>Improvement of elasticity</li>
                 <li>Blepharitis</li>
+                <li>Dry Eye</li>
+                <li>MGD</li>
               </ul>
             </div>
           </div>

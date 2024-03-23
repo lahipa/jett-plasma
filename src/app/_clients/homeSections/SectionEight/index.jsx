@@ -32,7 +32,7 @@ const SectionEight = () => {
             <li>Plasma treatment</li>
             <li>Simple handling and control</li>
             <li>8 intensities</li>
-            <li>6 metal heads for ablative and non-ablative procedures</li>
+            <li>Lift unit includes 5 heads (4 silver, 1 gold) and the Plasma Pen includes 7 heads (5 silver, 2 gold) for a total of 12</li>
             <li>Safety, efficiency and speed</li>
             <li>Lightweight and portable</li>
           </ul>

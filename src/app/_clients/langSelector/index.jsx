@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { usePopper } from "react-popper";
 import cx from "classnames";
 import { Icon } from "@/app/_components/base";
-
+import useLocalStorage from "@/hooks/useLocalStorage";
 
 const LangSelector = () => {
     const [open, setOpen] = useState(false);
@@ -12,10 +12,16 @@ const LangSelector = () => {
     const [popperElement, setPopperElement] = useState(null);
     const [referenceElement, setReferenceElement] = useState(null);
 
+    const [value, setValue] = useLocalStorage("lang", "");
+
     const { styles, attributes, update } = usePopper(referenceElement, popperElement, {
         placement: "bottom-end",
         modifiers: [{ name: "offset", options: { offset: [0, 8] } }],
     });
+
+    useEffect(() => {
+        if (!value) setValue("en");
+    }, [value]);
 
     useEffect(() => {
         const handleClickOutside = (e) => {
@@ -28,6 +34,7 @@ const LangSelector = () => {
     }, [popperElement, referenceElement]);
 
     const onSelectHandler = ({ item }) => {
+        setValue(item.value);
         setSelected(item.value);
         setOpen(false);
     };
@@ -37,12 +44,11 @@ const LangSelector = () => {
     // data
     const langData = [
         { title: "English (en)", value: "en", selected: "English (en)" },
-        { title: "Czech (cs)", value: "cs", selected: "Czech (cs)" },
     ];
 
     return (
         <div className="relative h-fit">
-            <button type="button" ref={setReferenceElement} className={wrapperButtonClass} onClick={() => setOpen(true)}>
+            <button type="button" ref={setReferenceElement} className={wrapperButtonClass} onClick={() => setOpen(!open)}>
                 <div className="flex items-center gap-[4px]">
                     <span className="uppercase">{selected}</span>
                     <Icon icon="IconChevronDown" />
@@ -56,7 +62,7 @@ const LangSelector = () => {
                     style={styles.popper}
                     {...attributes.popper}
                 >
-                    <div className="flex flex-col px-4 py-3 rounded-[8px] bg-white shadow-md border gap-4 max-h-[328px] overflow-x-auto">
+                    <div className="flex flex-col px-4 py-3 rounded-[8px] bg-background shadow-md border gap-4 max-h-[328px] overflow-x-auto">
 
                         {langData.map((item, index) => {
 

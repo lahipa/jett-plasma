@@ -16,34 +16,44 @@ const Slider = ({ slide, index, currentIndex, indexing }) => {
     const zIndexNext = next ? indexing * (currentIndex + 2) : indexing
 
     const clipPathInitial = active ? {
-        clipPath: 'inset(0 0% 0 100%)'
-    } : decrease ?{
         clipPath: 'inset(0 100% 0 0%)'
+    } : decrease ? {
+        clipPath: 'inset(0 0% 0 100%)'
     } : increase ? {
         clipPath: 'inset(0 0% 0 100%)'
     } : {
         clipPath: 'inset(0 0% 0 100%)'
-    }
+    };
 
-    const clipPathAnimate= active ? {
-        clipPath: 'inset(0 0 0 0)'
-    } : decrease ?{
-        clipPath: 'inset(0 100% 0 0%)'
-    } : increase ? {
+    const clipPathAnimate = active ? {
+        clipPath: 'inset(0 0 0 0)' 
+    } : decrease ? {
         clipPath: 'inset(0 0% 0 100%)'
+    } : increase ? {
+        clipPath: 'inset(0 100% 0 0%)'
     } : {
         clipPath: 'inset(0 % 0 100%)'
-    }
+    };
 
     const clipPathExit = active ? {
-        clipPath: 'inset(0 0% 0 0)'
-    } : decrease ?{
-        clipPath: 'inset(0 100% 0 0%)'
-    } : increase ? {
+        clipPath: 'inset(0 0% 0 0)' 
+    } : decrease ? {
         clipPath: 'inset(0 0% 0 100%)'
+    } : increase ? {
+        clipPath: 'inset(0 100% 0 0%)'
     } : {
         clipPath: 'inset(0 0% 0 100%)'
-    }
+    };
+
+
+    const handleButtonClick = async (item, index) => {
+        if (item !== page) {
+            setPage(item);
+            setCurrentIndex(index);
+            // await controls.start({ y: 0, transition: { duration: 0.9 } });
+        }
+    };
+
 
     return (
         <AnimatePresence
@@ -122,10 +132,10 @@ const MultipleBeforeAfter = (props) => {
     // };
 
     return (
-        
-            <div className="flex items-stretch gap-[90px]">
-                <div className="relative w-[766px] h-[500px] aspect-[70/45] overflow-hidden rounded-[20px]">
-                    {/* <div className="w-full h-full relative">
+
+        <div className="flex items-stretch gap-[90px]">
+            <div className="relative w-[766px] h-[500px] aspect-[70/45] overflow-hidden rounded-[20px]">
+                {/* <div className="w-full h-full relative">
                         <div className="absolute px-[14px] h-[32px] top-[10px] right-[10px] bg-[#1C1E22]/50 rounded-full">
                             <span className="text-white text-[14px] leading-[20px] font-medium">After</span>
                         </div>
@@ -136,58 +146,66 @@ const MultipleBeforeAfter = (props) => {
                         />
                     </div> */}
 
-                    {sliders.map((slide, x) => {
-                        const indexing = sliders.length - x;
+                {sliders.map((slide, x) => {
+                    const indexing = sliders.length - x;
 
-                        return (
-                            <Slider
-                                slide={slide}
-                                key={x}
-                                index={x}
-                                indexing={indexing}
-                                currentIndex={currentIndex}
-                            />
-                        );
-                    })}
+                    return (
+                        <Slider
+                            slide={slide}
+                            key={x}
+                            index={x}
+                            indexing={indexing}
+                            currentIndex={currentIndex}
+                        />
+                    );
+                })}
 
-                    {/* <div
+                {/* <div
                         className="absolute top-0 bottom-0 w-[2px] bg-white cursor-ew-resize"
                         style={{ left: `calc(${20}% - 1px)` }}
                     /> */}
-                </div>
-                <div className="flex-1 flex items-center">
-                    <div className="flex items-stretch gap-[8px]">
-                        <div className="h-[380px] flex flex-col justify-between">
-                            {[...Array(66)].map((_, i) => {
-                                return <div key={i.toString()} className="w-[10px] h-[1px] bg-[#1C1E22] rounded-full" />
-                            })}
-                        </div>
-                        <div className="h-[380px] relative flex flex-col justify-between">
+            </div>
+            <div className="flex-1 flex items-center">
+                <div className="flex items-stretch gap-[8px]">
+                    <div className="h-[380px] flex flex-col justify-between">
+                        {[...Array(66)].map((_, i) => {
+                            return <div key={i.toString()} className="w-[10px] h-[1px] bg-[#1C1E22] rounded-full" />
+                        })}
+                    </div>
+                    <div className="h-[380px] relative flex flex-col justify-between">
 
-                            {pagination.map((item, x) => {
-                                return (
-                                    <Fragment key={x.toString()} >
-                                        <div className="flex items-center gap-[10px]">
-                                            {item === page && <Icon icon="IconPlayerPlayFilled" size={24} />}
-                                            <button
-                                                type="button"
-                                                className={cx("outline-none focus:outline-none", {
-                                                    "font-medium": item === page,
-                                                    "opacity-50 ml-[34px]": item !== page
-                                                })}
-                                                onClick={() => {
-                                                    setPage(item)
-                                                    setCurrentIndex(x)
-                                                }}
+                        {pagination.map((item, x) => {
+                            return (
+                                <Fragment key={x.toString()} >
+                                    <div className="flex items-center gap-[10px]">
+                                        {item === page && (
+                                            <motion.div
+                                                initial={{ y: -20, opacity: 0 }} // Initial position and opacity
+                                                animate={{ y: item === page ? 0 : -20, opacity: 1 }} // Animate position and opacity when active
+                                                transition={{ duration: 0.9 }}
                                             >
-                                                {item}
-                                            </button>
-                                        </div>
-                                    </Fragment>
-                                );
-                            })}
+                                                <Icon icon={"IconPlayerPlayFilled"} size={24} />
+                                            </motion.div>
+                                        )}
+                                        <button
+                                            type="button"
+                                            className={cx("outline-none focus:outline-none", {
+                                                "font-medium": item === page,
+                                                "opacity-50 ml-[34px]": item !== page
+                                            })}
+                                            onClick={() => {
+                                                setPage(item)
+                                                setCurrentIndex(x)
+                                            }}
+                                        >
+                                            {item}
+                                        </button>
+                                    </div>
+                                </Fragment>
+                            );
+                        })}
 
-                            {/* <AnimatePresence
+                        {/* <AnimatePresence
                                 key={currentIndex.toString()}
                                 initial={false}
                                 custom={currentIndex}
@@ -203,11 +221,11 @@ const MultipleBeforeAfter = (props) => {
                                     <Icon icon="IconPlayerPlayFilled" size={24} />
                                 </motion.div>
                             </AnimatePresence> */}
-                        </div>
                     </div>
                 </div>
             </div>
-        
+        </div>
+
     );
 };
 

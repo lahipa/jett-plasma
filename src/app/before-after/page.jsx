@@ -64,7 +64,7 @@ export default function BeforeAfter() {
                     sliders={[
                         { title: "Before", source: "/products/before-after/verrucae/1-verrucae-before.png" },
                         { title: "Immediately after", source: "/products/before-after/verrucae/2-verrucae-immediately-after.png" },
-                        { title: "1 month after", source: "/products/before-after/verrucae/5-verrucae-1-month-after.png" },
+                        { title: "1 month after", source: "/products/before-after/verrucae/3-verrucae-1-month-after.png" },
                     ]}
                     pagination={["Before", "Immediately after", "1 month after"]}
                 />
@@ -77,7 +77,7 @@ export default function BeforeAfter() {
                     sliders={[
                         { title: "Before", source: "/products/before-after/xanthelasma/1-xanthelasma-before.png" },
                         { title: "Immediately after", source: "/products/before-after/xanthelasma/2-xanthelasma-immediately-after.png" },
-                        { title: "1 month after", source: "/products/before-after/xanthelasma/5-xanthelasma-1-month-after.png" },
+                        { title: "1 month after", source: "/products/before-after/xanthelasma/3-xanthelasma-1-month-after.png" },
                     ]}
                     pagination={["Before", "Immediately after", "1 month after"]}
                 />
